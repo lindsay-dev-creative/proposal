@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Web Design Proposal · Lindsay Dev Creative</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --c-0: #0a0a0a;
+      --c-1: #1a1a1a;
+      --c-2: #262626;
+      --c-3: #2e2e2e;
+      --c-4: #4d4d4d;
+      --c-5: #7a7a7a;
+      --c-6: #b8b8b8;
+      --c-7: #ededed;
+      --gold: #d4a85a;
+      --gold-light: #e8c88a;
+      --serif: "Lora", Georgia, "Times New Roman", serif;
+      --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body { margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--sans);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--c-7);
+      background: var(--c-0);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      letter-spacing: 0.005em;
+    }
+
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+
+    /* ——— Hero ——— */
+    .hero {
+      position: relative;
+      padding: 96px 0 80px;
+      overflow: hidden;
+      border-bottom: 1px solid var(--c-2);
+      background:
+        radial-gradient(ellipse at 80% 0%, rgba(212, 168, 90, 0.06), transparent 55%),
+        radial-gradient(ellipse at 10% 90%, rgba(212, 168, 90, 0.04), transparent 60%),
+        linear-gradient(180deg, var(--c-1), var(--c-0));
+    }
+
+    .hero-logo {
+      position: absolute;
+      right: -120px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 620px;
+      opacity: 0.04;
+      pointer-events: none;
+    }
+
+    .hero-inner { position: relative; z-index: 1; max-width: 760px; }
+
+    .eyebrow {
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 24px;
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 28px; height: 1px;
+      background: var(--gold);
+      display: inline-block;
+    }
+
+    h1.title {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(40px, 5.5vw, 64px);
+      line-height: 1.08;
+      letter-spacing: -0.015em;
+      color: var(--c-7);
+      margin: 0 0 24px;
+    }
+    h1.title em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--gold-light);
+    }
+
+    .lede {
+      font-size: 18px;
+      line-height: 1.65;
+      color: var(--c-6);
+      max-width: 620px;
+      margin: 0;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 48px;
+      margin-top: 56px;
+      padding-top: 32px;
+      border-top: 1px solid var(--c-2);
+    }
+    .meta-item .label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--c-5);
+      margin-bottom: 8px;
+    }
+    .meta-item .value {
+      font-family: var(--serif);
+      font-size: 20px;
+      color: var(--c-7);
+    }
+
+    /* ——— Intro ——— */
+    .intro {
+      padding: 96px 0 24px;
+      max-width: 720px;
+    }
+    .intro h2 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-style: italic;
+      font-size: 28px;
+      line-height: 1.4;
+      color: var(--c-7);
+      margin: 0 0 24px;
+    }
+    .intro p {
+      color: var(--c-6);
+      font-size: 17px;
+      margin: 0 0 16px;
+    }
+
+    /* ——— Packages section ——— */
+    .packages {
+      padding: 64px 0 120px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 24px;
+      padding-bottom: 32px;
+      margin-bottom: 56px;
+      border-bottom: 1px solid var(--c-2);
+    }
+    .section-head h3 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: 32px;
+      letter-spacing: -0.01em;
+      color: var(--c-7);
+      margin: 0;
+    }
+    .section-head .hint {
+      font-size: 13px;
+      color: var(--c-5);
+      letter-spacing: 0.04em;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      position: relative;
+      background: var(--c-1);
+      border: 1px solid var(--c-2);
+      border-radius: 4px;
+      padding: 40px 36px 44px;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 240ms ease, transform 240ms ease;
+    }
+    .card:hover {
+      border-color: var(--c-3);
+      transform: translateY(-2px);
+    }
+
+    .card.featured {
+      background: linear-gradient(180deg, #1c1a16, var(--c-1) 70%);
+      border-color: rgba(212, 168, 90, 0.35);
+    }
+    .card.featured:hover { border-color: var(--gold); }
+
+    .badge {
+      position: absolute;
+      top: -1px;
+      right: 28px;
+      background: var(--gold);
+      color: var(--c-0);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 6px 12px;
+      border-radius: 0 0 3px 3px;
+    }
+
+    .card .tag {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--c-5);
+      margin-bottom: 16px;
+    }
+    .card.featured .tag { color: var(--gold-light); }
+
+    .card h4 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: 30px;
+      letter-spacing: -0.01em;
+      color: var(--c-7);
+      margin: 0 0 4px;
+    }
+
+    .card .pages {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 14px;
+      color: var(--c-5);
+      margin-bottom: 28px;
+    }
+
+    .price {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      padding-bottom: 28px;
+      margin-bottom: 28px;
+      border-bottom: 1px solid var(--c-2);
+    }
+    .price .prefix {
+      font-size: 12px;
+      color: var(--c-5);
+      letter-spacing: 0.08em;
+    }
+    .price .amount {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: 44px;
+      color: var(--c-7);
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+    .card.featured .price .amount { color: var(--gold-light); }
+
+    .card .desc {
+      color: var(--c-6);
+      font-size: 14.5px;
+      line-height: 1.65;
+      margin: 0 0 24px;
+    }
+
+    .card .includes-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--c-5);
+      margin-bottom: 16px;
+    }
+
+    .card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 32px;
+    }
+    .card ul li {
+      position: relative;
+      padding: 10px 0 10px 22px;
+      font-size: 14.5px;
+      color: var(--c-6);
+      border-bottom: 1px solid rgba(46, 46, 46, 0.5);
+      line-height: 1.55;
+    }
+    .card ul li:last-child { border-bottom: none; }
+    .card ul li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 18px;
+      width: 8px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .card .plus {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 13px;
+      color: var(--c-5);
+      margin: -16px 0 12px;
+      padding-left: 22px;
+      position: relative;
+    }
+    .card .plus::before {
+      content: "+";
+      position: absolute;
+      left: 6px;
+      top: 0;
+      color: var(--gold);
+      font-style: normal;
+      font-weight: 500;
+    }
+
+    .timeline {
+      margin-top: auto;
+      padding-top: 24px;
+      border-top: 1px solid var(--c-2);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 13px;
+      color: var(--c-5);
+    }
+    .timeline .label {
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-size: 10.5px;
+    }
+    .timeline .value {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 15px;
+      color: var(--c-7);
+    }
+
+    /* ——— Footer ——— */
+    .footer {
+      padding: 56px 0 80px;
+      border-top: 1px solid var(--c-2);
+      background: var(--c-1);
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .footer .mark {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .footer .mark svg { width: 44px; height: 44px; }
+    .footer .mark .name {
+      font-family: var(--serif);
+      font-size: 15px;
+      color: var(--c-7);
+      line-height: 1.3;
+    }
+    .footer .mark .sub {
+      font-size: 12px;
+      color: var(--c-5);
+      letter-spacing: 0.05em;
+    }
+    .footer .note {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 14px;
+      color: var(--c-5);
+      max-width: 420px;
+      text-align: right;
+    }
+
+    /* ——— Responsive ——— */
+
+    /* Tablet (≤ 1024px) */
+    @media (max-width: 1024px) {
+      .wrap { padding: 0 28px; }
+      .cards { grid-template-columns: 1fr; gap: 20px; }
+      .card { padding: 36px 32px 40px; max-width: 640px; margin: 0 auto; width: 100%; }
+      .hero { padding: 80px 0 72px; }
+      .hero-logo { width: 520px; right: -180px; opacity: 0.035; }
+      .intro { padding: 80px 0 16px; }
+      .packages { padding: 56px 0 96px; }
+      .section-head { padding-bottom: 24px; margin-bottom: 40px; }
+      .meta { gap: 32px; margin-top: 48px; padding-top: 28px; }
+      .meta-item .value { font-size: 18px; }
+    }
+
+    /* Small tablet / large phone (≤ 720px) */
+    @media (max-width: 720px) {
+      .wrap { padding: 0 22px; }
+      .hero { padding: 64px 0 56px; }
+      .hero-logo { width: 380px; right: -180px; top: 60%; opacity: 0.03; }
+      h1.title { font-size: clamp(34px, 8vw, 44px); }
+      .lede { font-size: 16.5px; }
+      .meta {
+        gap: 0;
+        flex-direction: column;
+        margin-top: 40px;
+        padding-top: 24px;
+      }
+      .meta-item { padding: 14px 0; border-bottom: 1px solid var(--c-2); }
+      .meta-item:last-child { border-bottom: none; }
+      .meta-item .value { font-size: 17px; }
+      .intro { padding: 64px 0 8px; }
+      .intro h2 { font-size: 22px; line-height: 1.45; }
+      .intro p { font-size: 16px; }
+      .packages { padding: 48px 0 72px; }
+      .section-head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding-bottom: 20px;
+        margin-bottom: 32px;
+      }
+      .section-head h3 { font-size: 26px; }
+      .section-head .hint { font-size: 12px; }
+    }
+
+    /* Mobile (≤ 480px) */
+    @media (max-width: 480px) {
+      body { font-size: 15px; }
+      .wrap { padding: 0 18px; }
+      .hero { padding: 52px 0 48px; }
+      .hero-logo { width: 320px; right: -140px; opacity: 0.025; }
+      .eyebrow { font-size: 11px; letter-spacing: 0.2em; margin-bottom: 18px; }
+      .eyebrow::before { width: 20px; }
+      h1.title { font-size: 32px; line-height: 1.1; }
+      .lede { font-size: 15.5px; }
+      .card { padding: 32px 24px 36px; border-radius: 4px; }
+      .card h4 { font-size: 26px; }
+      .price .amount { font-size: 38px; }
+      .card .desc { font-size: 14px; }
+      .card ul li { font-size: 14px; padding: 9px 0 9px 20px; }
+      .card ul li::before { top: 17px; }
+      .badge { right: 20px; font-size: 9.5px; padding: 5px 10px; letter-spacing: 0.16em; }
+      .timeline .value { font-size: 14px; }
+      .footer { padding: 40px 0 56px; }
+      .footer .mark svg { width: 38px; height: 38px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; gap: 24px; }
+      .footer .note { text-align: left; font-size: 13.5px; }
+    }
+
+    @media print {
+      body { background: #fff; color: #111; }
+      .hero, .footer, .card { background: #fff !important; border-color: #ddd !important; }
+      .hero-logo { display: none; }
+      .card { break-inside: avoid; }
+      .cards { grid-template-columns: 1fr; gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <svg class="hero-logo" viewBox="0 0 1200 1200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path fill="#f9fafb" d="M600,0C268.63,0,0,268.63,0,600s268.63,600,600,600,600-268.63,600-600S931.37,0,600,0ZM1011.89,1011.89c-53.5,53.5-115.8,95.5-185.16,124.84-71.8,30.37-148.09,45.77-226.73,45.77s-154.93-15.4-226.73-45.77c-69.36-29.34-131.66-71.34-185.16-124.84-53.5-53.5-95.5-115.8-124.84-185.16-30.37-71.8-45.77-148.09-45.77-226.73s15.4-154.93,45.77-226.73c29.34-69.36,71.34-131.66,124.84-185.16,53.5-53.5,115.8-95.5,185.16-124.84,71.8-30.37,148.09-45.77,226.73-45.77s154.93,15.4,226.73,45.77c69.36,29.34,131.66,71.34,185.16,124.84,53.5,53.5,95.5,115.8,124.84,185.16,30.37,71.8,45.77,148.09,45.77,226.73s-15.4,154.93-45.77,226.73c-29.34,69.36-71.34,131.66-124.84,185.16Z"/>
+      <path fill="#f9fafb" d="M600,253.35c-92.59,0-179.64,36.06-245.12,101.53-65.47,65.47-101.53,152.52-101.53,245.12s36.06,179.64,101.53,245.12c65.47,65.47,152.52,101.53,245.12,101.53s179.64-36.06,245.12-101.53,101.53-152.52,101.53-245.12-36.06-179.64-101.53-245.12-152.52-101.53-245.12-101.53ZM611.64,834.86v-.07h-45.82c-2.52-22.64-20.02-91.03-135.04-149.16,15.99-7.57,41.46-22.74,68.3-51.14,47.58-50.35,74.49-116.04,89.6-177.83v170.47c-14.44,3.44-25.19,16.38-25.19,31.87,0,18.11,14.68,32.79,32.79,32.79s32.79-14.68,32.79-32.79c0-15.49-10.75-28.44-25.19-31.87v-170.25c22.04,89.94,58.99,145.22,89.6,177.61,26.83,28.4,52.31,43.57,68.3,51.14-115.26,58.21-133.81,126.76-136.72,149.26l-13.43-.03Z"/>
+    </svg>
+
+    <div class="wrap hero-inner">
+      <p class="eyebrow">Web Design Proposal</p>
+      <h1 class="title">A site built to <em>launch</em>, grow, and last.</h1>
+      <p class="lede">Three thoughtfully scoped packages, each one a complete project, with the option to scale as your business does. Pick the one that fits where you are now.</p>
+
+      <div class="meta">
+        <div class="meta-item">
+          <div class="label">Prepared for</div>
+          <div class="value">Company</div>
+        </div>
+        <div class="meta-item">
+          <div class="label">Prepared by</div>
+          <div class="value">Lindsay Dev Creative</div>
+        </div>
+        <div class="meta-item">
+          <div class="label">Date</div>
+          <div class="value">May 2026</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="wrap intro">
+    <h2>Every package below is a complete project, scoped, designed, and shipped end to end.</h2>
+    <p>The differences are scale and depth, not quality. The Starter is right when you need a clean presence quickly. The Signature is where most businesses land. The Studio is for brands ready to invest in a deeper, more layered web experience.</p>
+  </section>
+
+  <section class="wrap packages">
+    <div class="section-head">
+      <h3>Packages</h3>
+      <span class="hint">All prices in USD. Payment in three milestones.</span>
+    </div>
+
+    <div class="cards">
+
+      <article class="card">
+        <div class="tag">Starter Site</div>
+        <h4>Starter Site</h4>
+        <div class="pages">3 pages</div>
+
+        <div class="price">
+          <span class="amount">$4,000</span>
+        </div>
+
+        <p class="desc">A clean, focused site for businesses that need a strong online presence without the extra weight. Built to launch fast and grow with you later.</p>
+
+        <div class="includes-label">What's included</div>
+        <ul>
+          <li>Up to 3 pages (Home, About, Contact, or your equivalent)</li>
+          <li>Custom design in Framer, fully responsive</li>
+          <li>Brand-aligned typography and color system</li>
+          <li>Basic on-page SEO setup</li>
+          <li>Contact form with email notifications</li>
+          <li>One round of revisions per page</li>
+          <li>Launch support and handoff walkthrough</li>
+        </ul>
+
+        <div class="timeline">
+          <span class="label">Timeline</span>
+          <span class="value">approx. 2 months</span>
+        </div>
+      </article>
+
+      <article class="card featured">
+        <span class="badge">Most chosen</span>
+        <div class="tag">Signature Site</div>
+        <h4>Signature Site</h4>
+        <div class="pages">5 pages</div>
+
+        <div class="price">
+          <span class="amount">$7,000</span>
+        </div>
+
+        <p class="desc">The package most businesses land on. Enough room to tell your story, show your work, and give clients a clear path to reach you.</p>
+
+        <div class="includes-label">Everything in Starter, plus</div>
+        <ul>
+          <li>Up to 5 pages (Home, About, Services, Portfolio or Work, Contact)</li>
+          <li>Custom components and interactions</li>
+          <li>Service or offering breakdowns with individual sections</li>
+          <li>Testimonial and social proof sections</li>
+          <li>Image and asset optimization</li>
+          <li>Two rounds of revisions per page</li>
+          <li>Basic analytics setup (GA4 or Framer Analytics)</li>
+          <li>30 days of post-launch support</li>
+        </ul>
+
+        <div class="timeline">
+          <span class="label">Timeline</span>
+          <span class="value">approx. 4 months</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="tag">Studio Site</div>
+        <h4>Studio Site</h4>
+        <div class="pages">8+ pages</div>
+
+        <div class="price">
+          <span class="prefix">Starting at</span>
+          <span class="amount">$10,000</span>
+        </div>
+
+        <p class="desc">For businesses with more to say and more to show. Built for growth, with the structure to handle a wider range of content and a deeper brand experience.</p>
+
+        <div class="includes-label">Everything in Signature, plus</div>
+        <ul>
+          <li>8 or more pages, scoped to your business</li>
+          <li>Custom CMS setup for blog, portfolio, or case studies</li>
+          <li>Advanced animations and scroll interactions</li>
+          <li>Lead capture flows and form integrations (Make, Zapier, or CRM)</li>
+          <li>Full SEO foundation including meta, schema, and sitemap</li>
+          <li>Three rounds of revisions per page</li>
+          <li>60 days of post-launch support</li>
+          <li>Strategy session before kickoff</li>
+        </ul>
+
+        <div class="timeline">
+          <span class="label">Timeline</span>
+          <span class="value">custom scope</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div class="mark">
+        <svg viewBox="0 0 1200 1200" xmlns="http://www.w3.org/2000/svg" aria-label="Lindsay Dev Creative">
+          <path fill="#ededed" d="M600,0C268.63,0,0,268.63,0,600s268.63,600,600,600,600-268.63,600-600S931.37,0,600,0ZM1011.89,1011.89c-53.5,53.5-115.8,95.5-185.16,124.84-71.8,30.37-148.09,45.77-226.73,45.77s-154.93-15.4-226.73-45.77c-69.36-29.34-131.66-71.34-185.16-124.84-53.5-53.5-95.5-115.8-124.84-185.16-30.37-71.8-45.77-148.09-45.77-226.73s15.4-154.93,45.77-226.73c29.34-69.36,71.34-131.66,124.84-185.16,53.5-53.5,115.8-95.5,185.16-124.84,71.8-30.37,148.09-45.77,226.73-45.77s154.93,15.4,226.73,45.77c69.36,29.34,131.66,71.34,185.16,124.84,53.5,53.5,95.5,115.8,124.84,185.16,30.37,71.8,45.77,148.09,45.77,226.73s-15.4,154.93-45.77,226.73c-29.34,69.36-71.34,131.66-124.84,185.16Z"/>
+          <path fill="#ededed" d="M600,253.35c-92.59,0-179.64,36.06-245.12,101.53-65.47,65.47-101.53,152.52-101.53,245.12s36.06,179.64,101.53,245.12c65.47,65.47,152.52,101.53,245.12,101.53s179.64-36.06,245.12-101.53,101.53-152.52,101.53-245.12-36.06-179.64-101.53-245.12-152.52-101.53-245.12-101.53ZM611.64,834.86v-.07h-45.82c-2.52-22.64-20.02-91.03-135.04-149.16,15.99-7.57,41.46-22.74,68.3-51.14,47.58-50.35,74.49-116.04,89.6-177.83v170.47c-14.44,3.44-25.19,16.38-25.19,31.87,0,18.11,14.68,32.79,32.79,32.79s32.79-14.68,32.79-32.79c0-15.49-10.75-28.44-25.19-31.87v-170.25c22.04,89.94,58.99,145.22,89.6,177.61,26.83,28.4,52.31,43.57,68.3,51.14-115.26,58.21-133.81,126.76-136.72,149.26l-13.43-.03Z"/>
+        </svg>
+        <div>
+          <div class="name">Lindsay Dev Creative</div>
+          <div class="sub">lindsay@lindsaydevcreative.com</div>
+        </div>
+      </div>
+      <p class="note">Ready when you are. Reply to this proposal and we'll book a kickoff call.</p>
+    </div>
+  </footer>
+</body>
+</html>
