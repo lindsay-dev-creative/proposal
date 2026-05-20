@@ -56,16 +56,6 @@
         linear-gradient(180deg, var(--c-1), var(--c-0));
     }
 
-    .hero-logo {
-      position: absolute;
-      right: -120px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 620px;
-      opacity: 0.04;
-      pointer-events: none;
-    }
-
     .hero-inner { position: relative; z-index: 1; max-width: 760px; }
 
     .eyebrow {
@@ -370,7 +360,6 @@
       align-items: center;
       gap: 16px;
     }
-    .footer .mark svg { width: 44px; height: 44px; }
     .footer .mark .name {
       font-family: var(--serif);
       font-size: 15px;
@@ -399,7 +388,6 @@
       .cards { grid-template-columns: 1fr; gap: 20px; }
       .card { padding: 36px 32px 40px; max-width: 640px; margin: 0 auto; width: 100%; }
       .hero { padding: 80px 0 72px; }
-      .hero-logo { width: 520px; right: -180px; opacity: 0.035; }
       .intro { padding: 80px 0 16px; }
       .packages { padding: 56px 0 96px; }
       .section-head { padding-bottom: 24px; margin-bottom: 40px; }
@@ -411,7 +399,6 @@
     @media (max-width: 720px) {
       .wrap { padding: 0 22px; }
       .hero { padding: 64px 0 56px; }
-      .hero-logo { width: 380px; right: -180px; top: 60%; opacity: 0.03; }
       h1.title { font-size: clamp(34px, 8vw, 44px); }
       .lede { font-size: 16.5px; }
       .meta {
@@ -443,7 +430,6 @@
       body { font-size: 15px; }
       .wrap { padding: 0 18px; }
       .hero { padding: 52px 0 48px; }
-      .hero-logo { width: 320px; right: -140px; opacity: 0.025; }
       .eyebrow { font-size: 11px; letter-spacing: 0.2em; margin-bottom: 18px; }
       .eyebrow::before { width: 20px; }
       h1.title { font-size: 32px; line-height: 1.1; }
@@ -457,7 +443,6 @@
       .badge { right: 20px; font-size: 9.5px; padding: 5px 10px; letter-spacing: 0.16em; }
       .timeline .value { font-size: 14px; }
       .footer { padding: 40px 0 56px; }
-      .footer .mark svg { width: 38px; height: 38px; }
       .footer-inner { flex-direction: column; align-items: flex-start; gap: 24px; }
       .footer .note { text-align: left; font-size: 13.5px; }
     }
@@ -465,7 +450,6 @@
     @media print {
       body { background: #fff; color: #111; }
       .hero, .footer, .card { background: #fff !important; border-color: #ddd !important; }
-      .hero-logo { display: none; }
       .card { break-inside: avoid; }
       .cards { grid-template-columns: 1fr; gap: 16px; }
     }
@@ -473,11 +457,6 @@
 </head>
 <body>
   <header class="hero">
-    <svg class="hero-logo" viewBox="0 0 1200 1200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <path fill="#f9fafb" d="M600,0C268.63,0,0,268.63,0,600s268.63,600,600,600,600-268.63,600-600S931.37,0,600,0ZM1011.89,1011.89c-53.5,53.5-115.8,95.5-185.16,124.84-71.8,30.37-148.09,45.77-226.73,45.77s-154.93-15.4-226.73-45.77c-69.36-29.34-131.66-71.34-185.16-124.84-53.5-53.5-95.5-115.8-124.84-185.16-30.37-71.8-45.77-148.09-45.77-226.73s15.4-154.93,45.77-226.73c29.34-69.36,71.34-131.66,124.84-185.16,53.5-53.5,115.8-95.5,185.16-124.84,71.8-30.37,148.09-45.77,226.73-45.77s154.93,15.4,226.73,45.77c69.36,29.34,131.66,71.34,185.16,124.84,53.5,53.5,95.5,115.8,124.84,185.16,30.37,71.8,45.77,148.09,45.77,226.73s-15.4,154.93-45.77,226.73c-29.34,69.36-71.34,131.66-124.84,185.16Z"/>
-      <path fill="#f9fafb" d="M600,253.35c-92.59,0-179.64,36.06-245.12,101.53-65.47,65.47-101.53,152.52-101.53,245.12s36.06,179.64,101.53,245.12c65.47,65.47,152.52,101.53,245.12,101.53s179.64-36.06,245.12-101.53,101.53-152.52,101.53-245.12-36.06-179.64-101.53-245.12-152.52-101.53-245.12-101.53ZM611.64,834.86v-.07h-45.82c-2.52-22.64-20.02-91.03-135.04-149.16,15.99-7.57,41.46-22.74,68.3-51.14,47.58-50.35,74.49-116.04,89.6-177.83v170.47c-14.44,3.44-25.19,16.38-25.19,31.87,0,18.11,14.68,32.79,32.79,32.79s32.79-14.68,32.79-32.79c0-15.49-10.75-28.44-25.19-31.87v-170.25c22.04,89.94,58.99,145.22,89.6,177.61,26.83,28.4,52.31,43.57,68.3,51.14-115.26,58.21-133.81,126.76-136.72,149.26l-13.43-.03Z"/>
-    </svg>
-
     <div class="wrap hero-inner">
       <p class="eyebrow">Web Design Proposal</p>
       <h1 class="title">A site built to <em>launch</em>, grow, and last.</h1>
@@ -607,10 +586,6 @@
   <footer class="footer">
     <div class="wrap footer-inner">
       <div class="mark">
-        <svg viewBox="0 0 1200 1200" xmlns="http://www.w3.org/2000/svg" aria-label="Lindsay Dev Creative">
-          <path fill="#ededed" d="M600,0C268.63,0,0,268.63,0,600s268.63,600,600,600,600-268.63,600-600S931.37,0,600,0ZM1011.89,1011.89c-53.5,53.5-115.8,95.5-185.16,124.84-71.8,30.37-148.09,45.77-226.73,45.77s-154.93-15.4-226.73-45.77c-69.36-29.34-131.66-71.34-185.16-124.84-53.5-53.5-95.5-115.8-124.84-185.16-30.37-71.8-45.77-148.09-45.77-226.73s15.4-154.93,45.77-226.73c29.34-69.36,71.34-131.66,124.84-185.16,53.5-53.5,115.8-95.5,185.16-124.84,71.8-30.37,148.09-45.77,226.73-45.77s154.93,15.4,226.73,45.77c69.36,29.34,131.66,71.34,185.16,124.84,53.5,53.5,95.5,115.8,124.84,185.16,30.37,71.8,45.77,148.09,45.77,226.73s-15.4,154.93-45.77,226.73c-29.34,69.36-71.34,131.66-124.84,185.16Z"/>
-          <path fill="#ededed" d="M600,253.35c-92.59,0-179.64,36.06-245.12,101.53-65.47,65.47-101.53,152.52-101.53,245.12s36.06,179.64,101.53,245.12c65.47,65.47,152.52,101.53,245.12,101.53s179.64-36.06,245.12-101.53,101.53-152.52,101.53-245.12-36.06-179.64-101.53-245.12-152.52-101.53-245.12-101.53ZM611.64,834.86v-.07h-45.82c-2.52-22.64-20.02-91.03-135.04-149.16,15.99-7.57,41.46-22.74,68.3-51.14,47.58-50.35,74.49-116.04,89.6-177.83v170.47c-14.44,3.44-25.19,16.38-25.19,31.87,0,18.11,14.68,32.79,32.79,32.79s32.79-14.68,32.79-32.79c0-15.49-10.75-28.44-25.19-31.87v-170.25c22.04,89.94,58.99,145.22,89.6,177.61,26.83,28.4,52.31,43.57,68.3,51.14-115.26,58.21-133.81,126.76-136.72,149.26l-13.43-.03Z"/>
-        </svg>
         <div>
           <div class="name">Lindsay Dev Creative</div>
           <div class="sub">lindsay@lindsaydevcreative.com</div>
