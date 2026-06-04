@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Website Development Proposal &middot; Dynamic Cleaning Service</title>
+<meta name="description" content="Website Development Proposal for Dynamic Cleaning Service, prepared by Lindsay Young, Lindsay Dev Creative." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --gold: #e8c88a;
+    --c-ededed: #ededed;
+    --c-b8: #b8b8b8;
+    --c-7a: #7a7a7a;
+    --c-4d: #4d4d4d;
+    --c-2e: #2e2e2e;
+    --c-26: #262626;
+    --c-1a: #1a1a1a;
+
+    --serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+    --maxw: 920px;
+    --pad: 48px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--c-b8);
+    font-family: var(--sans);
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection { background: var(--gold); color: #0a0a0a; }
+
+  /* ---------- Layout ---------- */
+  .container {
+    width: 100%;
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding-inline: var(--pad);
+  }
+
+  /* ---------- Sticky header ---------- */
+  header.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10, 10, 10, 0.82);
+    backdrop-filter: saturate(140%) blur(14px);
+    -webkit-backdrop-filter: saturate(140%) blur(14px);
+    border-bottom: 1px solid var(--c-1a);
+  }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    min-height: 72px;
+    padding-block: 12px;
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    color: var(--c-ededed);
+  }
+  .brand svg { display: block; height: 46px; width: 46px; }
+  .brand .brand-word {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--c-7a);
+    line-height: 1.3;
+  }
+  .brand .brand-word b { color: var(--c-ededed); font-weight: 600; display: block; }
+
+  .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--c-ededed);
+    padding: 12px 22px;
+    border: 1px solid var(--c-2e);
+    border-radius: 2px;
+    transition: border-color 0.25s ease, color 0.25s ease, background 0.25s ease;
+    white-space: nowrap;
+  }
+  .nav-cta:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* ---------- Typography ---------- */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--serif);
+    font-weight: 400;
+    color: var(--c-ededed);
+    letter-spacing: 0.005em;
+  }
+  h1 em, h2 em, h3 em, h4 em, h5 em, h6 em,
+  h1 .it, h2 .it, h3 .it, h4 .it, h5 .it, h6 .it {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  h1 {
+    font-size: clamp(46px, 8vw, 84px);
+    line-height: 1.02;
+    margin: 0 0 28px;
+  }
+  h2 {
+    font-size: clamp(32px, 5vw, 50px);
+    line-height: 1.08;
+    margin: 0 0 22px;
+  }
+  h3 {
+    font-size: clamp(24px, 3.4vw, 32px);
+    line-height: 1.15;
+    margin: 0 0 12px;
+  }
+  h4 {
+    font-size: 21px;
+    line-height: 1.3;
+    margin: 0 0 8px;
+    color: var(--c-ededed);
+  }
+
+  p { margin: 0 0 20px; }
+  strong { color: var(--c-ededed); font-weight: 500; }
+  a { color: var(--gold); }
+
+  .lead {
+    font-size: clamp(19px, 2.4vw, 22px);
+    line-height: 1.6;
+    color: var(--c-b8);
+  }
+
+  /* ---------- Sections ---------- */
+  section { padding-block: clamp(56px, 8vw, 96px); }
+  .section-divider { border: 0; border-top: 1px solid var(--c-1a); margin: 0; }
+
+  .eyebrow {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--c-7a);
+    margin: 0 0 22px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: var(--c-4d);
+    display: inline-block;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero { padding-top: clamp(64px, 11vw, 130px); padding-bottom: clamp(48px, 7vw, 80px); }
+  .hero .kicker {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 28px;
+  }
+  .meta-grid {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 10px 40px;
+    margin-top: 44px;
+    padding-top: 32px;
+    border-top: 1px solid var(--c-1a);
+    max-width: 640px;
+  }
+  .meta-grid dt {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--c-7a);
+    padding-top: 4px;
+  }
+  .meta-grid dd {
+    margin: 0;
+    color: var(--c-ededed);
+    font-size: 16px;
+  }
+  .meta-grid dd span { display: block; color: var(--c-7a); font-size: 14px; }
+
+  /* ---------- Lists ---------- */
+  ul.feature-list { list-style: none; margin: 0; padding: 0; }
+  ul.feature-list li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 18px;
+    color: var(--c-b8);
+  }
+  ul.feature-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 13px;
+    width: 7px;
+    height: 7px;
+    border: 1px solid var(--gold);
+    transform: rotate(45deg);
+  }
+  ul.feature-list li strong { color: var(--c-ededed); }
+
+  /* ---------- Cards ---------- */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--c-1a);
+    border: 1px solid var(--c-1a);
+    margin-top: 8px;
+  }
+  .card {
+    background: var(--bg);
+    padding: 34px 32px;
+  }
+  .card .card-num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 18px;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+  .card p { margin-bottom: 0; color: var(--c-b8); font-size: 16px; }
+
+  /* ---------- Phase / timeline ---------- */
+  .phase {
+    border: 1px solid var(--c-26);
+    border-radius: 3px;
+    padding: 34px 36px;
+    margin-bottom: 20px;
+    background: linear-gradient(180deg, #121212 0%, var(--c-1a) 100%);
+  }
+  .phase-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+    margin-bottom: 14px;
+  }
+  .phase-tag {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .phase-date {
+    font-family: var(--sans);
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    color: var(--c-7a);
+  }
+  .phase h3 { margin-bottom: 12px; }
+  .phase p { margin-bottom: 0; color: var(--c-b8); font-size: 16px; }
+
+  /* ---------- Process steps ---------- */
+  ol.process { list-style: none; counter-reset: step; margin: 8px 0 0; padding: 0; }
+  ol.process li {
+    position: relative;
+    counter-increment: step;
+    padding: 0 0 34px 72px;
+    border-left: 1px solid var(--c-26);
+    margin-left: 22px;
+  }
+  ol.process li:last-child { border-left-color: transparent; padding-bottom: 0; }
+  ol.process li::before {
+    content: counter(step);
+    position: absolute;
+    left: -22px;
+    top: -4px;
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    background: var(--c-1a);
+    border: 1px solid var(--c-2e);
+    border-radius: 50%;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 19px;
+    color: var(--gold);
+  }
+  ol.process li h4 { margin-bottom: 6px; }
+  ol.process li p { margin-bottom: 0; font-size: 16px; }
+
+  /* ---------- Investment table ---------- */
+  .invest {
+    border: 1px solid var(--c-26);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: 8px;
+  }
+  .invest-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 20px 30px;
+    border-bottom: 1px solid var(--c-1a);
+  }
+  .invest-row:last-child { border-bottom: 0; }
+  .invest-row .label { color: var(--c-b8); font-size: 16px; }
+  .invest-row .value {
+    font-family: var(--sans);
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--c-7a);
+    white-space: nowrap;
+  }
+  .invest-row.head {
+    background: #121212;
+    padding-block: 28px;
+  }
+  .invest-row.head .label {
+    font-family: var(--serif);
+    font-size: 26px;
+    color: var(--c-ededed);
+  }
+  .invest-row.head .value {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 32px;
+    color: var(--gold);
+    text-transform: none;
+    letter-spacing: 0;
+  }
+  .invest-row .value.included { color: var(--c-ededed); }
+
+  .note-block {
+    margin-top: 26px;
+    padding: 24px 28px;
+    border-left: 2px solid var(--c-2e);
+    background: var(--c-1a);
+    border-radius: 0 3px 3px 0;
+  }
+  .note-block p { margin-bottom: 0; font-size: 16px; color: var(--c-b8); }
+  .note-block .note-title {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--c-7a);
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  /* ---------- Signature / closing ---------- */
+  .signoff { margin-top: 40px; }
+  .signoff .sig-name {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 34px;
+    color: var(--gold);
+    line-height: 1.1;
+  }
+  .signoff .sig-role {
+    font-family: var(--sans);
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    color: var(--c-7a);
+    margin-top: 6px;
+  }
+
+  /* ---------- Accept / form ---------- */
+  #accept { scroll-margin-top: 90px; }
+  .accept-shell {
+    border: 1px solid var(--c-26);
+    border-radius: 4px;
+    background: linear-gradient(180deg, #121212 0%, #0d0d0d 100%);
+    padding: clamp(36px, 6vw, 64px);
+  }
+  form .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    margin-top: 34px;
+  }
+  .field { display: flex; flex-direction: column; }
+  .field.full { grid-column: 1 / -1; }
+  .field label {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--c-7a);
+    margin-bottom: 10px;
+  }
+  .field input {
+    font-family: var(--sans);
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--c-ededed);
+    background: #0a0a0a;
+    border: 1px solid var(--c-2e);
+    border-radius: 2px;
+    padding: 15px 16px;
+    transition: border-color 0.2s ease, background 0.2s ease;
+  }
+  .field input::placeholder { color: var(--c-4d); }
+  .field input:focus {
+    outline: none;
+    border-color: var(--gold);
+    background: #0d0d0d;
+  }
+
+  .consent {
+    margin-top: 28px;
+    padding: 22px 24px;
+    background: var(--c-1a);
+    border: 1px solid var(--c-26);
+    border-radius: 3px;
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--c-b8);
+  }
+  .consent strong { color: var(--c-ededed); }
+
+  .submit-btn {
+    margin-top: 30px;
+    width: 100%;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--c-ededed);
+    background: transparent;
+    border: 1px solid var(--c-4d);
+    border-radius: 2px;
+    padding: 22px;
+    cursor: pointer;
+    transition: border-color 0.25s ease, color 0.25s ease, letter-spacing 0.25s ease;
+  }
+  .submit-btn:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    letter-spacing: 0.3em;
+  }
+
+  /* ---------- Footer ---------- */
+  footer.site-footer {
+    border-top: 1px solid var(--c-1a);
+    padding-block: 44px;
+  }
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+  .footer-inner .f-brand {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 20px;
+    color: var(--c-7a);
+  }
+  .footer-inner .f-meta {
+    font-family: var(--sans);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--c-4d);
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 900px) {
+    :root { --pad: 32px; }           /* tablet margins */
+    body { font-size: 16px; }
+    .card-grid { grid-template-columns: 1fr; }
+    .brand .brand-word { display: none; }
+  }
+  @media (max-width: 600px) {
+    :root { --pad: 24px; }           /* mobile margins */
+    .header-inner { min-height: 64px; }
+    .brand svg { height: 40px; width: 40px; }
+    .nav-cta { padding: 10px 16px; font-size: 11px; letter-spacing: 0.14em; }
+    .meta-grid { grid-template-columns: 1fr; gap: 4px; }
+    .meta-grid dt { padding-top: 16px; }
+    .meta-grid dt:first-child { padding-top: 0; }
+    form .form-grid { grid-template-columns: 1fr; }
+    .invest-row { flex-direction: column; gap: 6px; padding-inline: 22px; }
+    ol.process li { padding-left: 60px; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ===== Sticky header ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#accept" aria-label="Lindsay Dev Creative, jump to accept proposal">
+        <!-- Lindsay Dev Creative badge -->
+        <svg viewBox="0 0 200 200" role="img" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <path id="ldcTop" d="M 36 100 A 64 64 0 0 1 164 100" />
+            <path id="ldcBottom" d="M 38 100 A 62 62 0 0 0 162 100" />
+          </defs>
+          <circle cx="100" cy="100" r="94" stroke="#4d4d4d" stroke-width="1.5" />
+          <circle cx="100" cy="100" r="86" stroke="#2e2e2e" stroke-width="1" />
+          <text fill="#b8b8b8" font-family="Inter, sans-serif" font-size="20" font-weight="600" letter-spacing="3.5">
+            <textPath href="#ldcTop" startOffset="50%" text-anchor="middle">LINDSAY DEV</textPath>
+          </text>
+          <text fill="#b8b8b8" font-family="Inter, sans-serif" font-size="20" font-weight="600" letter-spacing="5">
+            <textPath href="#ldcBottom" startOffset="50%" text-anchor="middle">CREATIVE</textPath>
+          </text>
+          <!-- flanking dots -->
+          <circle cx="60" cy="128" r="2.2" fill="#7a7a7a" />
+          <circle cx="140" cy="128" r="2.2" fill="#7a7a7a" />
+          <!-- pen nib -->
+          <g stroke="#b8b8b8" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M100 58 C 118 80, 118 118, 100 146 C 82 118, 82 80, 100 58 Z" />
+            <line x1="100" y1="92" x2="100" y2="146" />
+            <circle cx="100" cy="84" r="4.5" fill="#0a0a0a" />
+          </g>
+        </svg>
+        <span class="brand-word">Lindsay <b>Dev Creative</b></span>
+      </a>
+      <a class="nav-cta" href="#accept">Accept Proposal</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== Hero ===== -->
+    <section class="hero">
+      <div class="container">
+        <p class="kicker">Website Development Proposal</p>
+        <h1>A <em>professional</em> home<br />for <em>Dynamic Cleaning Service</em></h1>
+        <p class="lead">A four page custom website, built to win commercial work and ready before your brochures start circulating.</p>
+
+        <dl class="meta-grid">
+          <dt>Prepared for</dt>
+          <dd>Dynamic Cleaning Service<span>Henry &amp; team</span></dd>
+          <dt>Prepared by</dt>
+          <dd>Lindsay Young<span>Owner and Creative Director</span></dd>
+          <dt>Date</dt>
+          <dd>June 4, 2026</dd>
+        </dl>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ===== Where you are ===== -->
+    <section>
+      <div class="container">
+        <p class="eyebrow">Where you are</p>
+        <h2>Where <em>you are</em></h2>
+        <p>Henry, thank you for taking the time to walk me through where Dynamic Cleaning Service is headed. You and your wife are relaunching with a clear focus on commercial work, you are bonded and insured, which sets you apart from most of the field, and you have real contracts in your sights, starting with the Clemson dormitory bid.</p>
+        <p>Your brochures from True Color are almost ready, and the QR code on them points to a website that does not exist yet. This proposal lays out a site built to support your commercial growth, and structured so the homepage is live before those brochures start circulating.</p>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ===== What this website needs to do ===== -->
+    <section>
+      <div class="container">
+        <p class="eyebrow">The objective</p>
+        <h2>What this website <em>needs to do</em></h2>
+        <ul class="feature-list">
+          <li>Give Dynamic Cleaning Service a professional online presence that earns trust with commercial clients and contract decision makers.</li>
+          <li>Send everyone who scans the brochure QR code to a clear, credible site where they can see what you do and reach out.</li>
+          <li>Turn interest into booked estimates through a contact and booking form tied to your calendar, so a request becomes a scheduled visit without the back and forth.</li>
+          <li>Lead with the things that win commercial work: bonded and insured, free estimates, free sample cleaning, and your track record.</li>
+          <li>Give you a foundation you can grow into as reviews, job photos, and hiring information come in.</li>
+        </ul>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ===== Scope of work ===== -->
+    <section>
+      <div class="container">
+        <p class="eyebrow">Scope of work</p>
+        <h2>A <em>four page</em> custom website</h2>
+        <p class="lead" style="margin-bottom:8px;">Written and designed from the ground up. No template look, no filler.</p>
+
+        <div class="card-grid">
+          <div class="card">
+            <div class="card-num">Home</div>
+            <h4>Your first impression</h4>
+            <p>Clear headline and tagline, a quick look at what you offer, the reasons to call you over anyone else, a testimonials section, and an obvious way to request a free estimate.</p>
+          </div>
+          <div class="card">
+            <div class="card-num">About</div>
+            <h4>Your story and credibility</h4>
+            <p>The relaunch, your years in the business, the fact that you are bonded and insured, the areas you serve across the Greenville Upstate, and your past work. We can feature your Century 21 reference with your approval.</p>
+          </div>
+          <div class="card">
+            <div class="card-num">Services</div>
+            <h4>What you do, laid out plainly</h4>
+            <p>Commercial cleaning, new construction cleaning, daily, weekly, or monthly schedules, and the specialty work you can bring in such as floor buffing and waxing. Free estimate and free sample cleaning noted clearly.</p>
+          </div>
+          <div class="card">
+            <div class="card-num">Contact</div>
+            <h4>The page that does the work</h4>
+            <p>A booking form for prospects to request a free estimate and pick a time, your contact details, and your service area.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ===== Included with the build ===== -->
+    <section>
+      <div class="container">
+        <p class="eyebrow">Included with the build</p>
+        <h2>Everything <em>handled</em></h2>
+        <ul class="feature-list">
+          <li><strong>Copywriting for all four pages,</strong> written in your voice.</li>
+          <li><strong>A booking form with calendar integration,</strong> so prospects can request a free estimate and choose a time that works for both of you.</li>
+          <li><strong>Email automation</strong> that confirms each request and keeps you from chasing every lead by hand.</li>
+          <li><strong>Iconography pulled from your brochure</strong> so the site and print materials feel like one brand.</li>
+        </ul>
+        <p style="margin-top:28px;">The site is built on Framer. I handle the build, maintenance, gallery uploads, and any bugs, so you can stay focused on running the business.</p>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ===== Timeline ===== -->
+    <section>
+      <div class="container">
+        <p class="eyebrow">Timeline</p>
+        <h2>Built in <em>two phases</em></h2>
+        <p style="margin-bottom:36px;">So your brochures always have somewhere real to point.</p>
+
+        <div class="phase">
+          <div class="phase-head">
+            <span class="phase-tag">Phase 1</span>
+            <span class="phase-date">Homepage live within 4 weeks &middot; by July 2, 2026</span>
+          </div>
+          <h3>A working homepage, <span class="it">live</span></h3>
+          <p>A working homepage with your services overview, contact information, and a way to reach you, live at your domain. This is the page your brochure QR code will link to.</p>
+        </div>
+
+        <div class="phase">
+          <div class="phase-head">
+            <span class="phase-tag">Phase 2</span>
+            <span class="phase-date">Full site complete within 2 to 3 months</span>
+          </div>
+          <h3>The <span class="it">complete</span> site</h3>
+          <p>Design of the remaining pages, your review and approval, then full development of the site. This includes your copy, the booking form and email automation, and your testimonials section.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ===== Project process ===== -->
+    <section>
+      <div class="container">
+        <p class="eyebrow">Project process</p>
+        <h2>How we <em>work together</em></h2>
+        <ol class="process">
+          <li>
+            <h4>Sitemap and wireframes</h4>
+            <p>I start with the sitemap and wireframes. Think of this as the blueprint for your website. Just as a home builder needs blueprints to build a house the right way, a web designer needs a sitemap and wireframes to plan where everything goes before any design begins.</p>
+          </li>
+          <li>
+            <h4>Homepage design and review</h4>
+            <p>Next I design the homepage. Before I move into development, we set up a video call to review it together so we are aligned on the direction before the build begins.</p>
+          </li>
+          <li>
+            <h4>Homepage development</h4>
+            <p>I develop the homepage and connect your domain to the new site by June 30. That gives us a couple of days to test everything before your July 2 deadline.</p>
+          </li>
+          <li>
+            <h4>Remaining pages and review</h4>
+            <p>I design the remaining pages. Before they go live, we have a second video call to walk through your feedback, and I make any revisions from there.</p>
+          </li>
+          <li>
+            <h4>Development, testing, and launch</h4>
+            <p>I develop the remaining pages and test everything thoroughly to make sure the site runs smoothly. Then we launch. The current estimated completion date is August 28, 2026. This can shift depending on when we are able to schedule our review calls and how quickly we exchange feedback.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ===== Investment ===== -->
+    <section>
+      <div class="container">
+        <p class="eyebrow">Investment</p>
+        <h2>Your <em>investment</em></h2>
+
+        <div class="invest">
+          <div class="invest-row head">
+            <span class="label">Four page website package</span>
+            <span class="value">$3,500</span>
+          </div>
+          <div class="invest-row">
+            <span class="label">Custom four page website on Framer</span>
+            <span class="value included">Included</span>
+          </div>
+          <div class="invest-row">
+            <span class="label">Copywriting for all pages</span>
+            <span class="value included">Included</span>
+          </div>
+          <div class="invest-row">
+            <span class="label">Booking form, calendar integration, and email automation</span>
+            <span class="value included">Included</span>
+          </div>
+          <div class="invest-row">
+            <span class="label">One month of maintenance after launch</span>
+            <span class="value included">Included</span>
+          </div>
+        </div>
+
+        <div class="note-block">
+          <span class="note-title">After the first month</span>
+          <p>Ongoing updates are billed at $80 per hour, rounded to the nearest 30 minutes. Most small updates, like adding a photo or a new testimonial, take about 30 to 60 minutes depending on the volume. I handle these for you so the site stays current without you having to learn the platform.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ===== What I will need from you ===== -->
+    <section>
+      <div class="container">
+        <p class="eyebrow">To get started</p>
+        <h2>What I will <em>need from you</em></h2>
+        <p style="margin-bottom:28px;">A few things to get started and keep us on the 4 week timeline:</p>
+        <ul class="feature-list">
+          <li>Your logo as a high resolution vector PDF.</li>
+          <li>The brochure design file from True Color, so I can match the look and pull iconography.</li>
+          <li>Your additional brand colors, with hex codes if you have them.</li>
+          <li>Access to your Namecheap credentials to manage your domain.</li>
+          <li>The business email address you want tied to the new domain.</li>
+          <li>Any photos, testimonials, or reference letters you already have, including the Century 21 letter.</li>
+        </ul>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ===== Next steps + closing ===== -->
+    <section>
+      <div class="container">
+        <p class="eyebrow">Next steps</p>
+        <h2>Where we go <em>from here</em></h2>
+        <ol class="process">
+          <li>
+            <h4>Review this proposal</h4>
+            <p>Review this proposal and send any questions my way.</p>
+          </li>
+          <li>
+            <h4>Agreement and first invoice</h4>
+            <p>When you are ready to move forward, I will send over an agreement and an invoice for the first payment.</p>
+          </li>
+          <li>
+            <h4>I begin your homepage</h4>
+            <p>Once your agreement is signed, the first invoice is paid, and I have the items listed above, I will begin work on your homepage so it is ready by July 2, 2026.</p>
+          </li>
+        </ol>
+
+        <p style="margin-top:40px;" class="lead">I would be glad to build this with you. Dynamic Cleaning Service has the experience and the credentials. The website should make that clear the moment someone lands on it.</p>
+
+        <div class="signoff">
+          <div class="sig-name">Lindsay Young</div>
+          <div class="sig-role">Owner and Creative Director, Lindsay Dev Creative</div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ===== Accept / signature form ===== -->
+    <section id="accept">
+      <div class="container">
+        <p class="eyebrow">Accept proposal</p>
+        <h2>Ready to <em>begin?</em></h2>
+        <p class="lead" style="margin-bottom:0;">Complete the fields below to accept this proposal. I will follow up with your agreement and first invoice.</p>
+
+        <div class="accept-shell" style="margin-top:38px;">
+          <!--
+            Form posts to FormSubmit, which delivers submissions to lindsay@lindsaydevcreative.com.
+            NOTE: the very first submission triggers a one time confirmation email to that address;
+            click the link in it once to activate delivery for all future submissions.
+          -->
+          <form action="https://formsubmit.co/lindsay@lindsaydevcreative.com" method="POST">
+            <input type="hidden" name="_subject" value="Proposal accepted — Dynamic Cleaning Service" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="Proposal" value="Website Development Proposal — Dynamic Cleaning Service" />
+
+            <div class="form-grid">
+              <div class="field full">
+                <label for="company">Company name</label>
+                <input id="company" name="Company name" type="text" placeholder="Dynamic Cleaning Service" required />
+              </div>
+              <div class="field">
+                <label for="first">First name</label>
+                <input id="first" name="First name" type="text" placeholder="Henry" required />
+              </div>
+              <div class="field">
+                <label for="last">Last name</label>
+                <input id="last" name="Last name" type="text" placeholder="Last name" required />
+              </div>
+              <div class="field full">
+                <label for="email">Email</label>
+                <input id="email" name="Email" type="email" placeholder="you@example.com" required />
+              </div>
+            </div>
+
+            <div class="consent">
+              <p style="margin:0;">By submitting this form, you confirm that <strong>this counts as your digital signature and your acceptance of this proposal</strong>, including the scope, timeline, and investment outlined above.</p>
+            </div>
+
+            <button class="submit-btn" type="submit">Sign &amp; Accept Proposal</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="f-brand">Lindsay Dev Creative</span>
+      <span class="f-meta">Website Development Proposal &middot; June 4, 2026</span>
+    </div>
+  </footer>
+
+</body>
+</html>
