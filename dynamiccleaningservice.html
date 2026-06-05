@@ -252,14 +252,13 @@
   .card-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1px;
-    background: var(--c-1a);
-    border: 1px solid var(--c-1a);
-    margin-top: 8px;
+    column-gap: 64px;
+    row-gap: 56px;
+    margin-top: 16px;
   }
   .card {
     background: var(--bg);
-    padding: 34px 32px;
+    padding: 0;
   }
   .card .card-num {
     font-family: var(--sans);
