@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Project Proposal &middot; La Fleur Society</title>
+<meta name="description" content="Project proposal for La Fleur Society, prepared by Lindsay Dev Creative. Shopify website build, event landing page, and monthly retainer options." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  @font-face {
+    font-family: "PP Editorial New";
+    src: url("fonts/PPEditorialNew-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "PP Editorial New";
+    src: url("fonts/PPEditorialNew-Italic.otf") format("opentype");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  :root {
+    --bg: #0a0a0a;
+    --gold: #d4a85a;
+    --txt-italic: #e8c88a;
+    --txt-white: #ededed;
+    --txt-body-pri: #b8b8b8;
+    --c-7a: #7a7a7a;
+    --c-4d: #4d4d4d;
+    --c-2e: #2e2e2e;
+    --c-26: #262626;
+    --c-1a: #1a1a1a;
+
+    --serif: "PP Editorial New", Georgia, "Times New Roman", serif;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+    --maxw: 900px;
+    --pad: 40px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--txt-body-pri);
+    font-family: var(--sans);
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection { background: var(--gold); color: #0a0a0a; }
+
+  /* ---------- Layout ---------- */
+  .container {
+    width: 100%;
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding-inline: var(--pad);
+  }
+
+  /* ---------- Sticky header ---------- */
+  header.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10, 10, 10, 0.82);
+    backdrop-filter: saturate(140%) blur(14px);
+    -webkit-backdrop-filter: saturate(140%) blur(14px);
+    border-bottom: 1px solid var(--c-1a);
+  }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    min-height: 72px;
+    padding-block: 12px;
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    color: var(--txt-white);
+  }
+  .brand img { display: block; height: 52px; width: 52px; object-fit: contain; transition: opacity 0.25s ease; }
+  .brand:hover img { opacity: 0.78; }
+
+  .nav-cta-wrap {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--txt-white);
+    padding: 12px 22px;
+    border: 1px solid var(--c-2e);
+    border-radius: 2px;
+    transition: border-color 0.25s ease, color 0.25s ease, background 0.25s ease;
+    white-space: nowrap;
+  }
+  .nav-cta:hover { border-color: var(--gold); color: var(--gold); }
+  .nav-cta.solid { background: var(--gold); border-color: var(--gold); color: #0a0a0a; }
+  .nav-cta.solid:hover { background: var(--txt-italic); border-color: var(--txt-italic); color: #0a0a0a; }
+
+  /* ---------- Typography ---------- */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--serif);
+    font-weight: 400;
+    color: var(--txt-white);
+    letter-spacing: 0.005em;
+  }
+  h1 em, h2 em, h3 em, h4 em, h5 em, h6 em,
+  h1 .it, h2 .it, h3 .it, h4 .it, h5 .it, h6 .it {
+    font-style: italic;
+    color: var(--txt-italic);
+  }
+
+  h1 {
+    font-size: clamp(46px, 8vw, 88px);
+    line-height: 1.02;
+    margin: 0 0 28px;
+  }
+  h2 {
+    font-size: clamp(32px, 5vw, 52px);
+    line-height: 1.08;
+    margin: 0 0 22px;
+  }
+  h3 {
+    font-size: clamp(30px, 4.5vw, 44px);
+    line-height: 1.1;
+    margin: 0 0 16px;
+  }
+  h4 {
+    font-size: clamp(26px, 3.8vw, 38px);
+    line-height: 1.12;
+    margin: 0 0 14px;
+  }
+  h5 {
+    font-size: clamp(24px, 3.4vw, 34px);
+    line-height: 1.15;
+    margin: 0 0 12px;
+  }
+  h6 {
+    font-size: 21px;
+    line-height: 1.3;
+    margin: 0 0 8px;
+    color: var(--txt-white);
+  }
+
+  p { margin: 0 0 20px; max-width: none; }
+  strong { color: var(--txt-white); font-weight: 500; }
+  a { color: var(--gold); }
+
+  .lead {
+    font-size: clamp(19px, 2.4vw, 22px);
+    line-height: 1.6;
+    color: var(--txt-body-pri);
+    max-width: none;
+  }
+
+  /* ---------- Sections ---------- */
+  section { padding-block: clamp(56px, 8vw, 96px); }
+  .section-divider { border: 0; border-top: 1px solid var(--c-1a); margin: 0; }
+
+  .eyebrow {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--c-7a);
+    margin: 0 0 22px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: var(--c-4d);
+    display: inline-block;
+  }
+  .project-type {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 24px;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero { padding-top: clamp(64px, 11vw, 130px); padding-bottom: clamp(48px, 7vw, 80px); }
+  .hero .kicker {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 28px;
+  }
+  .meta-grid {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 10px 40px;
+    margin-top: 44px;
+    padding-top: 32px;
+    border-top: 1px solid var(--c-1a);
+    max-width: 680px;
+  }
+  .meta-grid dt {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--c-7a);
+    padding-top: 4px;
+  }
+  .meta-grid dd {
+    margin: 0;
+    color: var(--txt-white);
+    font-size: 16px;
+  }
+  .meta-grid dd span { display: block; color: var(--c-7a); font-size: 14px; }
+  .meta-grid dd a { color: var(--gold); }
+
+  /* ---------- Blockquote / pull ---------- */
+  blockquote.pull {
+    margin: 36px 0;
+    padding: 4px 0 4px 30px;
+    border-left: 2px solid var(--gold);
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(22px, 3vw, 30px);
+    line-height: 1.3;
+    color: var(--txt-italic);
+    max-width: none;
+  }
+  blockquote.pull p { margin: 0; max-width: none; }
+  blockquote.pull strong { color: var(--txt-italic); font-weight: 400; }
+
+  /* ---------- Lists ---------- */
+  ul.feature-list { list-style: none; margin: 0; padding: 0; max-width: none; }
+  ul.feature-list li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 18px;
+    color: var(--txt-body-pri);
+  }
+  ul.feature-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 13px;
+    width: 7px;
+    height: 7px;
+    border: 1px solid var(--gold);
+    transform: rotate(45deg);
+  }
+  ul.feature-list li strong { color: var(--txt-white); }
+
+  /* ---------- Project blocks ---------- */
+  .project {
+    margin-top: 52px;
+    padding-top: 44px;
+    border-top: 1px solid var(--c-1a);
+  }
+  .project:first-of-type { border-top: 0; padding-top: 0; }
+  .project .proj-index {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(40px, 6vw, 64px);
+    color: var(--c-2e);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+  .scope-title {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--c-7a);
+    margin: 36px 0 18px;
+  }
+
+  /* ---------- Cards ---------- */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--c-1a);
+    border: 1px solid var(--c-1a);
+    margin-top: 40px;
+  }
+  .card {
+    background: var(--bg);
+    padding: 34px 32px;
+  }
+  .card h6 { font-style: italic; font-family: var(--serif); color: var(--txt-italic); font-size: 24px; margin-bottom: 12px; }
+  .card p { margin-bottom: 0; color: var(--txt-body-pri); font-size: 16px; }
+
+  /* ---------- Pricing ---------- */
+  .rate-banner {
+    margin-top: 8px;
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    flex-wrap: wrap;
+    padding: 30px 34px;
+    border: 1px solid var(--c-26);
+    border-radius: 4px;
+    background: linear-gradient(180deg, #121212 0%, var(--c-1a) 100%);
+  }
+  .rate-banner .rate-num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(40px, 6vw, 58px);
+    color: var(--txt-italic);
+    line-height: 1;
+  }
+  .rate-banner .rate-desc {
+    font-family: var(--sans);
+    font-size: 16px;
+    color: var(--txt-body-pri);
+    max-width: 520px;
+  }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 40px;
+  }
+  .tier {
+    border: 1px solid var(--c-26);
+    border-radius: 4px;
+    padding: 34px 28px;
+    background: linear-gradient(180deg, #121212 0%, var(--c-1a) 100%);
+    display: flex;
+    flex-direction: column;
+  }
+  .tier.featured { border-color: var(--gold); }
+  .tier .tier-tag {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+  .tier h5 {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 28px;
+    color: var(--txt-italic);
+    margin-bottom: 16px;
+  }
+  .tier .price {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 19px;
+    color: var(--txt-white);
+    margin-bottom: 4px;
+  }
+  .tier .hours {
+    font-family: var(--sans);
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    color: var(--c-7a);
+    margin-bottom: 22px;
+  }
+  .tier hr { border: 0; border-top: 1px solid var(--c-26); margin: 0 0 22px; }
+  .tier ul { list-style: none; margin: 0; padding: 0; }
+  .tier ul li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 14px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--txt-body-pri);
+  }
+  .tier ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 9px;
+    width: 6px;
+    height: 6px;
+    border: 1px solid var(--gold);
+    transform: rotate(45deg);
+  }
+
+  .note-block {
+    margin-top: 26px;
+    padding: 24px 28px;
+    border-left: 2px solid var(--c-2e);
+    background: var(--c-1a);
+    border-radius: 0 3px 3px 0;
+    max-width: none;
+  }
+  .note-block p { margin-bottom: 14px; font-size: 16px; color: var(--txt-body-pri); max-width: none; }
+  .note-block p:last-child { margin-bottom: 0; }
+
+  .services-title {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--c-7a);
+    margin: 48px 0 20px;
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--c-1a);
+    border: 1px solid var(--c-1a);
+  }
+  .services-grid .service {
+    background: var(--bg);
+    padding: 20px 26px;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--txt-white);
+  }
+
+  /* ---------- Process steps ---------- */
+  .steps {
+    counter-reset: step;
+    margin-top: 40px;
+    display: grid;
+    gap: 1px;
+    background: var(--c-1a);
+    border: 1px solid var(--c-1a);
+  }
+  .step {
+    background: var(--bg);
+    padding: 28px 32px;
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    align-items: start;
+    gap: 8px;
+  }
+  .step .step-num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 32px;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .step h6 { margin-bottom: 6px; }
+  .step p { margin: 0; font-size: 16px; color: var(--txt-body-pri); }
+
+  /* ---------- Closing ---------- */
+  .contact-line {
+    font-family: var(--sans);
+    font-size: 17px;
+    color: var(--txt-body-pri);
+    margin-top: 30px;
+  }
+  .contact-line a { color: var(--gold); }
+  .cta-row { margin-top: 36px; display: flex; gap: 14px; flex-wrap: wrap; }
+
+  /* ---------- Footer ---------- */
+  footer.site-footer {
+    border-top: 1px solid var(--c-1a);
+    padding-block: 44px;
+  }
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+  .footer-inner .f-brand {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 20px;
+    color: var(--c-7a);
+  }
+  .footer-inner .f-meta {
+    font-family: var(--sans);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--c-4d);
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 900px) {
+    :root { --pad: 32px; }
+    body { font-size: 16px; }
+    .card-grid { grid-template-columns: 1fr; }
+    .pricing-grid { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    :root { --pad: 24px; }
+    .header-inner { min-height: 64px; }
+    .brand img { height: 42px; width: 42px; }
+    .nav-cta { padding: 10px 15px; font-size: 11px; letter-spacing: 0.12em; }
+    .meta-grid { grid-template-columns: 1fr; gap: 4px; }
+    .meta-grid dt { padding-top: 16px; }
+    .meta-grid dt:first-child { padding-top: 0; }
+    .step { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ===== Sticky header ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Lindsay Dev Creative">
+        <img src="LDC_PRIM_WHT.png" alt="Lindsay Dev Creative" />
+      </a>
+      <nav class="nav-cta-wrap" aria-label="Primary">
+        <a class="nav-cta" href="http://portfolio.lindsaydevcreative.com.html">Portfolio</a>
+        <a class="nav-cta solid" href="mailto:lindsay@lindsaydevcreative.com,jodymariewilliams3@gmail.com?subject=La%20Fleur%20Society%20Proposal">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ===== Hero ===== -->
+    <section class="hero">
+      <div class="container">
+        <p class="kicker">Prepared for</p>
+        <h1>La Fleur <em>Society</em></h1>
+        <p class="lead">A focused scope of work covering a Shopify website build for your client&rsquo;s luxury personal care brand, an event landing page with automated RSVP collection, and flexible monthly support to carry the partnership forward.</p>
+
+        <dl class="meta-grid">
+          <dt>Proposal Date</dt>
+          <dd>June 12, 2026</dd>
+          <dt>Prepared For</dt>
+          <dd>La Fleur Society</dd>
+          <dt>Prepared By</dt>
+          <dd>Lindsay Dev Creative<span>Lindsay Young, Creative Director</span></dd>
+        </dl>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ===== Overview ===== -->
+    <section>
+      <div class="container">
+        <p class="eyebrow">Overview</p>
+        <h2>A Partner Who Holds <em>Your Standard</em></h2>
+        <p>Thank you for the opportunity to work alongside La Fleur Society. You build brands with intention, and you protect the standard your clients trust you for. I work the same way. My role is to be a single, reliable creative and development partner you can hand a project to, knowing it will come back finished, on brand, and on time.</p>
+        <p>This proposal outlines two near-term projects and a set of monthly retainer options. It is built to flex: the Shopify scope will be confirmed once the client site finishes migrating, and the retainer can scale up or down as the work in front of you changes.</p>
+
+        <blockquote class="pull">
+          <p>One designer and developer for whatever comes up. Web, brand, print, and the dozens of small touchpoints in between.</p>
+        </blockquote>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ===== Scope of work ===== -->
+    <section>
+      <div class="container">
+        <p class="eyebrow">Scope of Work</p>
+        <h2>The <em>Projects</em></h2>
+
+        <!-- Project 01 -->
+        <div class="project">
+          <div class="proj-index">01</div>
+          <h4>Shopify Website Build</h4>
+          <p class="project-type">Luxury Personal Care Brand &middot; Shopify</p>
+          <p>Your client&rsquo;s brand is positioned as an heirloom: high-end personal care objects made from luxe materials, meant to be kept rather than replaced. The brand identity and guidelines are already in place. The site needs to finally honor them, with the moody, saturated, luxe direction the brand was always intended to carry rather than the lighter look it ended up with.</p>
+          <p>The site is currently migrating from Squarespace to Shopify, and La Fleur Society will receive it once that transition is complete. Because the exact condition of the migrated theme will not be known until then, the work below is scoped as a flexible range. It may land closer to refined page-level styling, or closer to a near rebuild of key templates. I will confirm the precise hours after a full review of the migrated store.</p>
+
+          <p class="scope-title">What This Project Covers</p>
+          <ul class="feature-list">
+            <li><strong>Brand-true visual direction.</strong> Apply the existing brand guidelines faithfully across the store, leaning into the deep green, navy, linen, oxblood, and cognac leather palette and the saturated, editorial feel the brand was built for.</li>
+            <li><strong>Shop by ritual and by material.</strong> Build the browsing experience around the way the brand wants to be explored, by ritual (hair, teeth, and more) and by material, with room for curated sets.</li>
+            <li><strong>Founder-forward storytelling.</strong> Center the founder as the face of the brand. Co-founder presence stays in descriptions and social only, kept off the primary pages as directed.</li>
+            <li><strong>Refined product and collection templates.</strong> Product, collection, and landing templates styled to luxury standard, with considered typography, spacing, and imagery treatment.</li>
+            <li><strong>Built to grow.</strong> Structure the store so future additions, such as personalization, can be layered in without a rebuild.</li>
+            <li><strong>Designer and client directions side by side.</strong> Where it helps the decision, I will show the client-preferred direction next to my recommended direction, so the choice is clear and informed.</li>
+          </ul>
+
+          <div class="note-block">
+            <p><strong>Dependency:</strong> This project begins once Jody or Margaux confirms the client site has finished migrating from Squarespace to Shopify. I will then audit the migrated store and provide a confirmed hour estimate and timeline before any work begins.</p>
+          </div>
+        </div>
+
+        <!-- Project 02 -->
+        <div class="project">
+          <div class="proj-index">02</div>
+          <h4>Event Landing Page &amp; RSVP System</h4>
+          <p class="project-type">Influencer Event &middot; Outreach to RSVP</p>
+          <p>For the upcoming influencer event, the goal is to gauge interest and collect mailing addresses before physical invitations go out. I will build a fast, on-brand flow that captures every response cleanly and lands it where your team can act on it.</p>
+
+          <p class="scope-title">The Flow</p>
+          <ul class="feature-list">
+            <li><strong>Personalized outreach email.</strong> Sent from a recognized La Fleur Society team member so recipients immediately know the sender, with a simple yes or no interest prompt.</li>
+            <li><strong>Landing page for contact details.</strong> A quick, elegant page that collects each guest&rsquo;s mailing address and contact information for the invitation send.</li>
+            <li><strong>Automatic Google Sheets integration.</strong> Every submission feeds directly into a master Google Sheet in real time, so the guest list builds itself with no manual entry.</li>
+            <li><strong>RSVP-ready.</strong> The same approach extends to RSVP collection once invitations go out, mirroring the QR-to-RSVP flow used on past events.</li>
+            <li><strong>Kept separate from the client website.</strong> The landing page lives on its own, independent of the client store, and can be turned around quickly.</li>
+          </ul>
+
+          <div class="card-grid">
+            <div class="card">
+              <h6>Fast to launch</h6>
+              <p>The core landing page is a roughly one to two hour build, so outreach can begin without delay.</p>
+            </div>
+            <div class="card">
+              <h6>Zero manual tracking</h6>
+              <p>Responses and addresses flow straight into a single shared sheet, ready for the invitation mailing.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ===== How I work ===== -->
+    <section>
+      <div class="container">
+        <p class="eyebrow">Approach</p>
+        <h2>How the Work <em>Gets Done</em></h2>
+        <p>I listen to the vision first, then translate it into work that holds up to a luxury standard. Where a decision benefits from options, I present the client-preferred direction and my recommended direction together, so nothing moves forward by guesswork.</p>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div>
+              <h6>Listen &amp; Align</h6>
+              <p>Review the brand guidelines, the goals, and the constraints. Confirm the vision and the direction before any pixels move.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div>
+              <h6>Audit &amp; Scope</h6>
+              <p>For the Shopify build, review the migrated store in detail and confirm a precise hour estimate and timeline. For the event page, lock the flow and the data destination.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div>
+              <h6>Design &amp; Build</h6>
+              <p>Produce the work to brand standard, sharing directions side by side where it helps the decision, and revising in clear, focused rounds.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <div>
+              <h6>Launch &amp; Support</h6>
+              <p>Ship the finished work, confirm everything functions as intended, and stay available for the touch-ups and follow-on requests that always come up.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ===== Investment ===== -->
+    <section>
+      <div class="container">
+        <p class="eyebrow">Investment</p>
+        <h2>Rates &amp; <em>Retainers</em></h2>
+        <p>Project work is billed at a straightforward hourly rate. For ongoing partnership, a monthly retainer keeps design and development support on hand whenever something comes up, so the work stays consistent and you are not starting cold each time.</p>
+
+        <div class="rate-banner">
+          <div class="rate-num">$80<span style="font-style:normal;font-family:var(--sans);font-size:18px;color:var(--c-7a);"> / hour</span></div>
+          <div class="rate-desc">Standard hourly rate for project and ad hoc work, including the Shopify build and the event landing page. Each project is confirmed with an estimated hour range before it begins.</div>
+        </div>
+
+        <h5 style="margin-top:56px;">Monthly Retainer <span class="it">Tiers</span></h5>
+        <p>Each tier is built around a set number of hours per month at a reduced effective rate, with faster turnaround as you move up. Choose the level that fits your current pace, and scale as the partnership grows.</p>
+
+        <div class="pricing-grid">
+          <div class="tier">
+            <div class="tier-tag">Tier I</div>
+            <h5>Essential</h5>
+            <div class="price">$800 / month</div>
+            <div class="hours">10 hours / month &middot; $80/hr</div>
+            <hr />
+            <ul>
+              <li>Ongoing design and development support</li>
+              <li>Turnaround: 5 to 7 business days</li>
+              <li>Monthly planning check-in</li>
+              <li>Ideal for light, steady upkeep</li>
+            </ul>
+          </div>
+          <div class="tier featured">
+            <div class="tier-tag">Tier II &middot; Most Popular</div>
+            <h5>Signature</h5>
+            <div class="price">$1,520 / month</div>
+            <div class="hours">20 hours / month &middot; $76/hr effective</div>
+            <hr />
+            <ul>
+              <li>Everything in Essential</li>
+              <li>Turnaround: 3 to 5 business days</li>
+              <li>Expanded hours for campaigns and events</li>
+              <li>Priority scheduling</li>
+            </ul>
+          </div>
+          <div class="tier">
+            <div class="tier-tag">Tier III</div>
+            <h5>Atelier</h5>
+            <div class="price">$2,880 / month</div>
+            <div class="hours">40 hours / month &middot; $72/hr effective</div>
+            <hr />
+            <ul>
+              <li>Everything in Signature</li>
+              <li>Turnaround: 2 to 3 business days</li>
+              <li>Dedicated creative direction</li>
+              <li>First priority on event and launch timelines</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="note-block">
+          <p>Unused hours roll one month forward, then expire. Work beyond the monthly allotment bills at the standard $80 hourly rate. Tiers can be changed or paused as the partnership grows.</p>
+          <p>Third-party and production costs are separate. Printing, materials, shipping, premium apps, and fulfillment pass through at cost. The retainer covers design and development time, not physical or platform spend.</p>
+        </div>
+
+        <p class="services-title">Services Available</p>
+        <div class="services-grid">
+          <div class="service">Shopify Design &amp; Development</div>
+          <div class="service">Wix, Squarespace, Framer &amp; Custom Code</div>
+          <div class="service">Landing Pages &amp; Form Integrations</div>
+          <div class="service">Brand Identity &amp; Brand Refresh</div>
+          <div class="service">Digital &amp; Print Invitations</div>
+          <div class="service">Marketing Collateral</div>
+          <div class="service">Event Graphics &amp; Signage</div>
+          <div class="service">Ongoing Web Maintenance</div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ===== Next steps ===== -->
+    <section id="start">
+      <div class="container">
+        <p class="eyebrow">Next Steps</p>
+        <h2>Ready When <em>You Are</em></h2>
+        <p class="lead">Two simple things move this forward. First, let me know which retainer tier fits, or whether you would prefer to start on the hourly project basis. Second, have Jody or Margaux notify me once the client site finishes migrating to Shopify, and I will begin the store audit and confirm the build estimate right away. The event landing page can begin at any time.</p>
+
+        <p class="contact-line">Reach me directly at <a href="mailto:lindsay@lindsaydevcreative.com">lindsay@lindsaydevcreative.com</a>, or email Lindsay and Jody together at <a href="mailto:lindsay@lindsaydevcreative.com,jodymariewilliams3@gmail.com">lindsay@lindsaydevcreative.com</a> &amp; <a href="mailto:jodymariewilliams3@gmail.com">jodymariewilliams3@gmail.com</a>.</p>
+
+        <div class="cta-row">
+          <a class="nav-cta solid" href="mailto:lindsay@lindsaydevcreative.com,jodymariewilliams3@gmail.com?subject=La%20Fleur%20Society%20Proposal">Start the Conversation</a>
+          <a class="nav-cta" href="http://portfolio.lindsaydevcreative.com.html">View Portfolio</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="f-brand">Lindsay Dev Creative</span>
+      <span class="f-meta">Project Proposal for La Fleur Society &middot; June 12, 2026</span>
+    </div>
+  </footer>
+
+</body>
+</html>
