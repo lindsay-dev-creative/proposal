@@ -423,6 +423,31 @@
   .slider-dots button.active { background: var(--gold); border-color: var(--gold); }
 
   /* ---------- Pricing ---------- */
+  .rate-banner {
+    margin-top: 8px;
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    flex-wrap: wrap;
+    padding: 30px 34px;
+    border: 1px solid var(--c-26);
+    border-radius: 4px;
+    background: linear-gradient(180deg, #121212 0%, var(--c-1a) 100%);
+  }
+  .rate-banner .rate-num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(40px, 6vw, 58px);
+    color: var(--txt-italic);
+    line-height: 1;
+  }
+  .rate-banner .rate-desc {
+    font-family: var(--sans);
+    font-size: 16px;
+    color: var(--txt-body-pri);
+    max-width: 520px;
+  }
+
   .pricing-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -775,8 +800,14 @@
     <section>
       <div class="container">
         <h2>Rates &amp; <em>Retainers</em></h2>
+        <p>Project work is billed at a straightforward hourly rate. For ongoing partnership, a monthly retainer keeps design and development support on hand whenever something comes up, so the work stays consistent and you are not starting cold each time.</p>
 
-        <h5>Monthly Retainer <span class="it">Tiers</span></h5>
+        <div class="rate-banner">
+          <div class="rate-num">$80<span style="font-style:normal;font-family:var(--sans);font-size:18px;color:var(--c-7a);"> / hour</span></div>
+          <div class="rate-desc">Standard hourly rate for project and ad hoc work, including the Shopify build and the event landing page. Each project is confirmed with an estimated hour range before it begins.</div>
+        </div>
+
+        <h5 style="margin-top:56px;">Monthly Retainer <span class="it">Tiers</span></h5>
         <p>Each tier is built around a set number of hours per month at a reduced effective rate, with faster turnaround as you move up. Choose the level that fits your current pace, and scale as the partnership grows.</p>
 
         <div class="pricing-grid">
