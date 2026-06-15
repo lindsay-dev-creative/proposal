@@ -11,14 +11,14 @@
 <style>
   @font-face {
     font-family: "PP Editorial New";
-    src: url("fonts/PPEditorialNew-Regular.otf") format("opentype");
+    src: url("../fonts/PPEditorialNew-Regular.otf") format("opentype");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
   }
   @font-face {
     font-family: "PP Editorial New";
-    src: url("fonts/PPEditorialNew-Italic.otf") format("opentype");
+    src: url("../fonts/PPEditorialNew-Italic.otf") format("opentype");
     font-weight: 400;
     font-style: italic;
     font-display: swap;
@@ -325,32 +325,104 @@
   .card h6 { font-style: italic; font-family: var(--serif); color: var(--txt-italic); font-size: 24px; margin-bottom: 12px; }
   .card p { margin-bottom: 0; color: var(--txt-body-pri); font-size: 16px; }
 
-  /* ---------- Pricing ---------- */
-  .rate-banner {
-    margin-top: 8px;
-    display: flex;
-    align-items: baseline;
-    gap: 18px;
-    flex-wrap: wrap;
-    padding: 30px 34px;
-    border: 1px solid var(--c-26);
-    border-radius: 4px;
-    background: linear-gradient(180deg, #121212 0%, var(--c-1a) 100%);
-  }
-  .rate-banner .rate-num {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: clamp(40px, 6vw, 58px);
-    color: var(--txt-italic);
-    line-height: 1;
-  }
-  .rate-banner .rate-desc {
+  /* ---------- Count-on subhead ---------- */
+  .count-on-title {
     font-family: var(--sans);
-    font-size: 16px;
-    color: var(--txt-body-pri);
-    max-width: 520px;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--c-7a);
+    margin: 44px 0 0;
   }
 
+  /* ---------- Testimonial slider ---------- */
+  .testimonials { overflow: hidden; }
+  .slider {
+    position: relative;
+    margin-top: 44px;
+  }
+  .slides {
+    position: relative;
+    min-height: 1px;
+  }
+  .slide {
+    display: none;
+    animation: slideFade 0.6s ease;
+  }
+  .slide.active { display: block; }
+  @keyframes slideFade {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .slide blockquote {
+    margin: 0;
+    padding: 0 0 0 30px;
+    border-left: 2px solid var(--gold);
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(22px, 3vw, 32px);
+    line-height: 1.32;
+    color: var(--txt-italic);
+  }
+  .slide blockquote p { margin: 0; max-width: none; }
+  .slide .attribution {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin: 26px 0 0 32px;
+  }
+  .slide .attribution .name {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 0.04em;
+    color: var(--txt-white);
+  }
+  .slide .attribution .role {
+    font-family: var(--sans);
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--c-7a);
+  }
+  .slider-controls {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin: 40px 0 0 32px;
+  }
+  .slider-arrows { display: inline-flex; gap: 10px; }
+  .slider-arrow {
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid var(--c-2e);
+    border-radius: 2px;
+    color: var(--txt-white);
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1;
+    transition: border-color 0.25s ease, color 0.25s ease;
+  }
+  .slider-arrow:hover { border-color: var(--gold); color: var(--gold); }
+  .slider-dots { display: inline-flex; gap: 10px; }
+  .slider-dots button {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: 1px solid var(--c-4d);
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+    transition: background 0.25s ease, border-color 0.25s ease;
+  }
+  .slider-dots button.active { background: var(--gold); border-color: var(--gold); }
+
+  /* ---------- Pricing ---------- */
   .pricing-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -366,15 +438,6 @@
     flex-direction: column;
   }
   .tier.featured { border-color: var(--gold); }
-  .tier .tier-tag {
-    font-family: var(--sans);
-    font-weight: 600;
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 16px;
-  }
   .tier h5 {
     font-family: var(--serif);
     font-style: italic;
@@ -517,14 +580,14 @@
 
   /* ---------- Responsive ---------- */
   @media (max-width: 900px) {
-    :root { --pad: 32px; }
+    :root { --pad: 40px; }
     body { font-size: 16px; }
     .card-grid { grid-template-columns: 1fr; }
     .pricing-grid { grid-template-columns: 1fr; }
     .services-grid { grid-template-columns: 1fr; }
   }
   @media (max-width: 600px) {
-    :root { --pad: 24px; }
+    :root { --pad: 20px; }
     .header-inner { min-height: 64px; }
     .brand img { height: 42px; width: 42px; }
     .nav-cta { padding: 10px 15px; font-size: 11px; letter-spacing: 0.12em; }
@@ -561,7 +624,7 @@
 
         <dl class="meta-grid">
           <dt>Proposal Date</dt>
-          <dd>June 12, 2026</dd>
+          <dd>June 15, 2026</dd>
           <dt>Prepared For</dt>
           <dd>La Fleur Society</dd>
           <dt>Prepared By</dt>
@@ -583,6 +646,26 @@
         <blockquote class="pull">
           <p>One designer and developer for whatever comes up. Web, brand, print, and the dozens of small touchpoints in between.</p>
         </blockquote>
+
+        <p class="count-on-title">What You Can Count On</p>
+        <div class="card-grid">
+          <div class="card">
+            <h6>Intentional</h6>
+            <p>Every visual decision serves the brand. Nothing is decorative for its own sake.</p>
+          </div>
+          <div class="card">
+            <h6>Collaborative</h6>
+            <p>I work as a true partner, integrating with your team, your producers, and your vendors to bring one cohesive vision to life.</p>
+          </div>
+          <div class="card">
+            <h6>High Quality, On Time</h6>
+            <p>Premium work, delivered when I say it will be. Responsiveness and follow-through are part of the product.</p>
+          </div>
+          <div class="card">
+            <h6>Consistent</h6>
+            <p>From the invitation in your hand to the website on your phone, the brand holds together everywhere.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -696,19 +779,12 @@
       <div class="container">
         <p class="eyebrow">Investment</p>
         <h2>Rates &amp; <em>Retainers</em></h2>
-        <p>Project work is billed at a straightforward hourly rate. For ongoing partnership, a monthly retainer keeps design and development support on hand whenever something comes up, so the work stays consistent and you are not starting cold each time.</p>
 
-        <div class="rate-banner">
-          <div class="rate-num">$80<span style="font-style:normal;font-family:var(--sans);font-size:18px;color:var(--c-7a);"> / hour</span></div>
-          <div class="rate-desc">Standard hourly rate for project and ad hoc work, including the Shopify build and the event landing page. Each project is confirmed with an estimated hour range before it begins.</div>
-        </div>
-
-        <h5 style="margin-top:56px;">Monthly Retainer <span class="it">Tiers</span></h5>
+        <h5>Monthly Retainer <span class="it">Tiers</span></h5>
         <p>Each tier is built around a set number of hours per month at a reduced effective rate, with faster turnaround as you move up. Choose the level that fits your current pace, and scale as the partnership grows.</p>
 
         <div class="pricing-grid">
           <div class="tier">
-            <div class="tier-tag">Tier I</div>
             <h5>Essential</h5>
             <div class="price">$800 / month</div>
             <div class="hours">10 hours / month &middot; $80/hr</div>
@@ -721,7 +797,6 @@
             </ul>
           </div>
           <div class="tier featured">
-            <div class="tier-tag">Tier II &middot; Most Popular</div>
             <h5>Signature</h5>
             <div class="price">$1,520 / month</div>
             <div class="hours">20 hours / month &middot; $76/hr effective</div>
@@ -734,7 +809,6 @@
             </ul>
           </div>
           <div class="tier">
-            <div class="tier-tag">Tier III</div>
             <h5>Atelier</h5>
             <div class="price">$2,880 / month</div>
             <div class="hours">40 hours / month &middot; $72/hr effective</div>
@@ -769,6 +843,56 @@
 
     <hr class="section-divider" />
 
+    <!-- ===== Testimonials ===== -->
+    <section class="testimonials">
+      <div class="container">
+        <p class="eyebrow">Kind Words</p>
+        <h2>What Partners <em>Say</em></h2>
+
+        <div class="slider" data-slider>
+          <div class="slides">
+            <div class="slide active">
+              <blockquote>
+                <p>Lindsay took our vision and made it feel effortless. The work came back polished, on brand, and ahead of schedule, every single time.</p>
+              </blockquote>
+              <div class="attribution">
+                <span class="name">Jody Williams</span>
+                <span class="role">Creative Producer</span>
+              </div>
+            </div>
+            <div class="slide">
+              <blockquote>
+                <p>Having one person who can hold design, development, and print together is rare. Nothing falls through the cracks, and the brand stays consistent everywhere.</p>
+              </blockquote>
+              <div class="attribution">
+                <span class="name">Margaux Bell</span>
+                <span class="role">Brand Director</span>
+              </div>
+            </div>
+            <div class="slide">
+              <blockquote>
+                <p>Responsive, intentional, and genuinely collaborative. Lindsay feels like part of our team rather than an outside vendor.</p>
+              </blockquote>
+              <div class="attribution">
+                <span class="name">Selena Ortiz</span>
+                <span class="role">Founder, Luxury Personal Care</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="slider-controls">
+            <div class="slider-arrows">
+              <button class="slider-arrow" type="button" data-prev aria-label="Previous testimonial">&larr;</button>
+              <button class="slider-arrow" type="button" data-next aria-label="Next testimonial">&rarr;</button>
+            </div>
+            <div class="slider-dots" data-dots aria-label="Select testimonial"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
     <!-- ===== Next steps ===== -->
     <section id="start">
       <div class="container">
@@ -776,10 +900,9 @@
         <h2>Ready When <em>You Are</em></h2>
         <p class="lead">Two simple things move this forward. First, let me know which retainer tier fits, or whether you would prefer to start on the hourly project basis. Second, have Jody or Margaux notify me once the client site finishes migrating to Shopify, and I will begin the store audit and confirm the build estimate right away. The event landing page can begin at any time.</p>
 
-        <p class="contact-line">Reach me directly at <a href="mailto:lindsay@lindsaydevcreative.com">lindsay@lindsaydevcreative.com</a>, or email Lindsay and Jody together at <a href="mailto:lindsay@lindsaydevcreative.com,jodymariewilliams3@gmail.com">lindsay@lindsaydevcreative.com</a> &amp; <a href="mailto:jodymariewilliams3@gmail.com">jodymariewilliams3@gmail.com</a>.</p>
+        <p class="contact-line">Questions or want to see more of my work? Reach me directly at <a href="mailto:lindsay@lindsaydevcreative.com">lindsay@lindsaydevcreative.com</a></p>
 
         <div class="cta-row">
-          <a class="nav-cta solid" href="mailto:lindsay@lindsaydevcreative.com,jodymariewilliams3@gmail.com?subject=La%20Fleur%20Society%20Proposal">Start the Conversation</a>
           <a class="nav-cta" href="http://portfolio.lindsaydevcreative.com.html">View Portfolio</a>
         </div>
       </div>
@@ -791,9 +914,41 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <span class="f-brand">Lindsay Dev Creative</span>
-      <span class="f-meta">Project Proposal for La Fleur Society &middot; June 12, 2026</span>
+      <span class="f-meta">Project Proposal for La Fleur Society &middot; June 15, 2026</span>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var slider = document.querySelector('[data-slider]');
+      if (!slider) return;
+      var slides = Array.prototype.slice.call(slider.querySelectorAll('.slide'));
+      var dotsWrap = slider.querySelector('[data-dots]');
+      var current = 0;
+
+      var dots = slides.map(function (_, i) {
+        var dot = document.createElement('button');
+        dot.type = 'button';
+        dot.setAttribute('aria-label', 'Testimonial ' + (i + 1));
+        dot.addEventListener('click', function () { go(i); });
+        dotsWrap.appendChild(dot);
+        return dot;
+      });
+
+      function go(index) {
+        current = (index + slides.length) % slides.length;
+        slides.forEach(function (slide, i) {
+          slide.classList.toggle('active', i === current);
+          dots[i].classList.toggle('active', i === current);
+        });
+      }
+
+      slider.querySelector('[data-prev]').addEventListener('click', function () { go(current - 1); });
+      slider.querySelector('[data-next]').addEventListener('click', function () { go(current + 1); });
+
+      go(0);
+    })();
+  </script>
 
 </body>
 </html>
