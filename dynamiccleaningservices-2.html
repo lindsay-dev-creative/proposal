@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Landing Page Proposal &middot; Dynamic Cleaning Services</title>
+<meta name="description" content="Landing Page Proposal for Dynamic Cleaning Services, prepared by Lindsay Young, Lindsay Dev Creative." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --gold: #e8c88a;
+    --c-ed: #ededed;
+    --c-d2: #d2d2d2;
+    --c-b8: #b8b8b8;
+    --c-99: #999999;
+    --c-7a: #7a7a7a;
+    --c-4d: #4d4d4d;
+    --c-2e: #2e2e2e;
+    --c-26: #262626;
+    --c-1a: #1a1a1a;
+
+    --serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+    --maxw: 920px;
+    --pad: 48px;
+
+    --bold600: 600;
+  }
+
+  .bold { font-weight: var(--bold600); }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--c-b8);
+    font-family: var(--sans);
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection { background: var(--gold); color: #0a0a0a; }
+
+  /* ---------- Typography ---------- */
+  h1, h2, h3, h4, h5, h6, .h5 {
+    font-family: var(--serif);
+    font-weight: 400;
+    color: var(--c-ed);
+    letter-spacing: 0.005em;
+  }
+  h1 em, h2 em, h3 em, h4 em, h5 em, h6 em,
+  .h5 em, .h5.it {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  h1 {
+    font-size: 3.815rem; /* 61px */
+    line-height: 1.2em;
+    margin: 0 0 28px;
+  }
+  h2 {
+    font-size: 3.052rem; /* 50 px */
+    line-height: 1.25em;
+    margin: 0 0 22px;
+  }
+  h3 {
+    font-size: 2.441rem; /* 39px */
+    line-height: 1.3em;
+    margin: 0 0 12px;
+  }
+  h4 {
+    font-size: 1.953rem; /* 31px */
+    line-height: 1.35em;
+    margin: 0 0 8px;
+    color: var(--c-ed);
+  }
+  h5 {
+    font-size: 1.563rem; /* 25px */
+    line-height: 1.4em;
+    letter-spacing: 0.01em;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  h6 {
+    font-size: 1.25rem; /* 20px */
+    line-height: 1.45em;
+  }
+
+
+  p {
+    font-size: 17px;
+    margin: 0 0 20px;
+    max-width: 624px;
+    color: var(--c-7a);
+    text-wrap: pretty; }
+  .p .sm {
+    font-family: var(--sans);
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    color: var(--c-7a);
+  }
+  
+  lead {
+    font-size: 19px;
+    line-height: 1.6;
+    text-wrap: pretty;
+    color: var(--c-b8);
+    max-width: 56ch;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .lead.strong { color: var(--c-ed); font-weight: 500; }
+  
+  strong { color: var(--c-ed); font-weight: 500; }
+  .strong.muted { color: var(--c-d2); font-weight: 500; }
+  a { color: var(--gold); }
+
+
+  /* ---------- Layout ---------- */
+  .container {
+    width: 100%;
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding-inline: var(--pad);
+  }
+
+  /* ---------- Sticky header ---------- */
+  header.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10, 10, 10, 0.82);
+    backdrop-filter: saturate(140%) blur(14px);
+    -webkit-backdrop-filter: saturate(140%) blur(14px);
+    border-bottom: 1px solid var(--c-1a);
+  }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    min-height: 72px;
+    padding-block: 12px;
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    color: var(--c-ed);
+  }
+  .brand svg, .brand img { display: block; height: 56px; width: 56px; object-fit: contain; }
+  .brand .brand-word {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--c-7a);
+    line-height: 1.3;
+  }
+  .brand .brand-word b { color: var(--c-ed); font-weight: 600; display: block; }
+
+  .nav-cta-wrap {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .nav-note {
+    font-family: var(--sans);
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    color: var(--c-7a);
+    font-style: italic;
+    white-space: nowrap;
+  }
+  /* Style 1 — quiet inline text link ("Email me") */
+  .nav-note a {
+    color: var(--c-7a);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    font-style: normal;
+    transition: color 0.2s ease;
+  }
+  .nav-note a:hover { color: var(--c-b8); text-decoration: underline; }
+  .nav-note a:active { color: #E8C88A; }
+
+  /* button */
+  .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--c-b8);
+    background: var(--bg);
+    padding: 13px 24px;
+    border: 1px solid var(--c-2e);
+    transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.1s ease;
+    white-space: nowrap;
+  }
+  .nav-cta:hover { border-color: var(--c-ed); color: var(--c-ed); }
+  .nav-cta:active {
+    transform: translateY(1px);
+    border: 1px solid var(--gold);
+    color: var(--gold);
+  }
+
+  /* ---------- Sections ---------- */
+  section { padding-block: clamp(56px, 8vw, 96px); }
+  .section-divider { border: 0; border-top: 1px solid var(--c-1a); margin: 0; }
+
+  .eyebrow {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--c-7a);
+    margin: 0 0 22px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: var(--c-4d);
+    display: inline-block;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero { padding-top: clamp(64px, 11vw, 130px); padding-bottom: clamp(48px, 7vw, 80px); }
+  .hero .kicker {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 28px;
+  }
+  .meta-grid {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 10px 40px;
+    margin-top: 44px;
+    padding-top: 32px;
+    border-top: 1px solid var(--c-1a);
+    max-width: 640px;
+  }
+  .meta-grid dt {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--c-7a);
+    padding-top: 4px;
+  }
+  .meta-grid dd {
+    margin: 0;
+    color: var(--c-ed);
+    font-size: 16px;
+  }
+  .meta-grid dd span { display: block; color: var(--c-7a); font-size: 14px; }
+
+  /* ---------- Lists ---------- */
+  ul.feature-list { list-style: none; margin: 0; padding: 0; }
+  ul.feature-list li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 18px;
+    color: var(--c-b8);
+    max-width: 60ch;
+    text-wrap: pretty;
+  }
+  ul.feature-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 7px;
+    height: 7px;
+    border: 1px solid var(--gold);
+    transform: rotate(45deg);
+  }
+  ul.feature-list li strong { color: var(--c-ed); }
+
+  /* ---------- Cards ---------- */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--c-1a);
+    border: 1px solid var(--c-1a);
+    margin-top: 40px;
+  }
+  .card {
+    background: var(--bg);
+    padding: 34px 32px;
+  }
+  .card .card-num {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--c-7a);
+    margin-bottom: 16px;
+  }
+  .card h4 { font-style: italic; color: #e8c88a; }
+  .card p { margin-bottom: 0; color: var(--c-b8); font-size: 16px; }
+
+  /* ---------- Phase / timeline ---------- */
+  .phase {
+    border: 1px solid var(--c-26);
+    border-radius: 3px;
+    padding: 34px 36px;
+    margin-bottom: 20px;
+    background: linear-gradient(180deg, #121212 0%, var(--c-1a) 100%);
+  }
+  .phase-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+    margin-bottom: 14px;
+  }
+  .phase-tag {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .phase-date {
+    font-family: var(--sans);
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    color: var(--c-7a);
+  }
+  .phase h3 { margin-bottom: 12px; }
+  .phase p { margin-bottom: 0; color: var(--c-b8); font-size: 16px; }
+
+  /* ---------- Process steps ---------- */
+  ol.process { list-style: none; counter-reset: step; margin: 8px 0 0; padding: 0; }
+  ol.process li {
+    position: relative;
+    counter-increment: step;
+    padding: 0 0 34px 48px;
+    border-left: 1px solid var(--c-26);
+    margin-left: 22px;
+  }
+  ol.process li:last-child { border-left-color: transparent; padding-bottom: 0; }
+  ol.process li::before {
+    content: counter(step);
+    position: absolute;
+    left: -22px;
+    top: -4px;
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    background: var(--c-1a);
+    border: 1px solid var(--c-2e);
+    border-radius: 50%;
+    font-family: var(--serif);
+    font-style: normal;
+    font-size: 1.25rem;
+    color: var(--gold);
+  }
+  ol.process li h4 { margin-bottom: 6px; }
+  ol.process li h5 { margin: 0 0 6px; }
+  ol.process li p { margin-bottom: 0; font-size: 17px; }
+  ol.process:not(.next-steps) li p { color: var(--c-99); }
+  ol.process:not(.next-steps) li strong { color: var(--c-d2); }
+  /* Next steps list — same as .process, tighter bottom spacing */
+  ol.process.next-steps li { padding-bottom: 24px; }
+  ol.process.next-steps li:last-child { padding-bottom: 0; }
+  .p { max-width: 624px; }
+
+  /* ---------- Investment table ---------- */
+  .invest {
+    border: 1px solid var(--c-26);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: 8px;
+  }
+  .invest-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 20px 30px;
+    border-bottom: 1px solid var(--c-1a);
+  }
+  .invest-row:last-child { border-bottom: 0; }
+  .invest-row .label { color: var(--c-b8); font-size: 16px; }
+  .invest-row .value {
+    font-family: var(--sans);
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--c-7a);
+    white-space: nowrap;
+  }
+  .invest-row.head {
+    background: #121212;
+    padding-block: 28px;
+  }
+  .invest-row.head .label {
+    font-family: var(--serif);
+    font-size: 26px;
+    color: var(--c-ed);
+  }
+  .invest-row.head .value {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 32px;
+    color: var(--gold);
+    text-transform: none;
+    letter-spacing: 0;
+  }
+  .invest-row .value.included { color: var(--c-ed); }
+
+  .note-block {
+    margin-top: 26px;
+    padding: 24px 28px;
+    border-left: 2px solid var(--c-2e);
+    background: var(--c-1a);
+    border-radius: 0 3px 3px 0;
+  }
+  .note-block p { margin-bottom: 0; font-size: 16px; color: var(--c-b8); }
+  .note-block .note-title {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--c-7a);
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  /* ---------- Signature / closing ---------- */
+  .signoff .sig-role {
+    font-family: var(--sans);
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    color: var(--c-7a);
+  }
+
+  /* ---------- Accept / form ---------- */
+  #accept { scroll-margin-top: 90px; }
+  #accept .container > * { max-width: 600px; margin-inline: auto; }
+  .accept-shell {
+    border: 1px solid var(--c-26);
+    border-radius: 4px;
+    background: linear-gradient(180deg, #121212 0%, #0d0d0d 100%);
+    padding: clamp(24px, 5vw, 40px);
+  }
+  form .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    margin-top: 0;
+  }
+  .field { display: flex; flex-direction: column; }
+  .field.full { grid-column: 1 / -1; }
+  .field label {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--c-7a);
+    margin-bottom: 10px;
+  }
+  .field input {
+    font-family: var(--sans);
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--c-ed);
+    background: #0a0a0a;
+    border: 1px solid var(--c-2e);
+    border-radius: 2px;
+    padding: 15px 16px;
+    transition: border-color 0.2s ease, background 0.2s ease;
+  }
+  .field input::placeholder { color: var(--c-4d); }
+  .field input:focus {
+    outline: none;
+    border-color: var(--gold);
+    background: #0d0d0d;
+  }
+
+  .consent {
+    margin-top: 28px;
+    padding: 20px 22px;
+    background: var(--c-1a);
+    border: 1px solid var(--c-26);
+    border-radius: 3px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--c-b8);
+  }
+  .consent strong { color: var(--c-ed); }
+
+  .submit-btn {
+    margin-top: 30px;
+    width: 100%;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--c-ed);
+    background: transparent;
+    border: 1px solid var(--c-4d);
+    border-radius: 2px;
+    padding: 22px;
+    cursor: pointer;
+    transition: border-color 0.25s ease, color 0.25s ease, letter-spacing 0.25s ease;
+  }
+  .submit-btn:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    letter-spacing: 0.3em;
+  }
+
+  /* ---------- Footer ---------- */
+  footer.site-footer {
+    border-top: 1px solid var(--c-1a);
+    padding-block: 44px;
+  }
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+  .footer-inner .f-brand {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 20px;
+    color: var(--c-7a);
+  }
+  .footer-inner .f-meta {
+    font-family: var(--sans);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--c-4d);
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 900px) {
+    :root { --pad: 32px; }           /* tablet margins */
+    body { font-size: 16px; }
+    .card-grid { grid-template-columns: 1fr; }
+    .brand .brand-word { display: none; }
+  }
+  @media (max-width: 600px) {
+    :root { --pad: 24px; }           /* mobile margins */
+    .header-inner { min-height: 64px; }
+    .brand svg, .brand img { height: 40px; width: 40px; }
+    .nav-cta { padding: 10px 16px; font-size: 11px; letter-spacing: 0.14em; }
+    .nav-note { display: none; }
+    .meta-grid { grid-template-columns: 1fr; gap: 4px; }
+    .meta-grid dt { padding-top: 16px; }
+    .meta-grid dt:first-child { padding-top: 0; }
+    form .form-grid { grid-template-columns: 1fr; }
+    .invest-row { flex-direction: column; gap: 6px; padding-inline: 22px; }
+    ol.process li { padding-left: 60px; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ===== Sticky header ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#accept" aria-label="Lindsay Dev Creative, jump to accept proposal">
+        <img src="ldc-logo.png" alt="Lindsay Dev Creative" />
+      </a>
+      <div class="nav-cta-wrap">
+        <span class="nav-note">Questions? <a href="mailto:lindsay@lindsaydevcreative.com"> Email me.</a></span>
+        <a class="nav-cta" href="#accept">Accept Proposal</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== Hero ===== -->
+    <section class="hero">
+      <div class="container">
+        <h1>Landing Page <em>Proposal</em></h1>
+
+        <dl class="meta-grid">
+          <dt>Prepared for</dt>
+          <dd>Dynamic Cleaning Services</dd>
+          <dt>Prepared by</dt>
+          <dd>Lindsay Dev Creative</dd>
+          <dt>Date</dt>
+          <dd>June 13, 2026</dd>
+        </dl>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ===== Where you are ===== -->
+    <section>
+      <div class="container">
+        <h2>Previous call <em>recap</em></h2>
+        <p style="color:var(--c-99);">You asked to see what this would look like as a landing page only, so this version is scoped to <strong>one focused page</strong> rather than the full multi page site. It gives the brochure QR code a real, credible home and a <strong>clear way for prospects to reach you</strong>, with room to grow into a larger site later.</p>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ===== What this landing page needs to do ===== -->
+    <section>
+      <div class="container">
+        <h2>What this landing page <em>needs to do</em></h2>
+        <ul class="feature-list">
+          <li>Give Dynamic Cleaning Services a <strong>professional online presence</strong> that <strong>earns trust</strong> with commercial clients and contract decision makers.</li>
+          <li>Send everyone who scans the brochure QR code to a clear, credible page where they can see what you do and <strong>reach out</strong>.</li>
+          <li>Turn interest into <strong>booked estimates</strong> through your <strong>automated booking form</strong>, so a request becomes a scheduled visit without the back and forth.</li>
+          <li>Lead with the things that win commercial work: <strong>bonded and insured</strong>, free estimates, free sample cleaning, and <strong>your track record</strong>.</li>
+          <li>Give you a foundation <strong>you can grow</strong> into a full site as reviews, job photos, and hiring information come in.</li>
+        </ul>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ===== Scope of work ===== -->
+    <section>
+      <div class="container">
+        <h2 style="margin-bottom: 0px;">Scope of <em>work</em></h2>
+        <lead style="margin-top: 16px; margin-bottom:40px; line-height:1.7;">A single custom landing page, written and designed from the ground up. No template look, no filler. Everything a prospect needs on one focused, scrollable page.</lead>
+
+        <div class="card-grid">
+          <div class="card">
+            <div class="card-num">Section 01</div>
+            <h4>Services</h4>
+            <p style="line-height:1.6em;">Commercial cleaning, new construction cleaning, daily, weekly, or monthly schedules, and the specialty work you can bring in such as floor buffing and waxing. <span class="strong muted">Free estimate and free sample cleaning noted clearly.</span></p>
+          </div>
+          <div class="card">
+            <div class="card-num">Section 02</div>
+            <h4>Mission and about</h4>
+            <p style="line-height:1.6em;">Your mission and the story behind Dynamic Cleaning Services. The relaunch, your years in the business, the fact that you are <span class="strong muted">bonded and insured</span>, and the areas you serve across the Greenville Upstate.</p>
+          </div>
+          <div class="card">
+            <div class="card-num">Section 03</div>
+            <h4>Imagery</h4>
+            <p style="line-height:1.6em;"><span class="strong muted">Clean, professional imagery,</span> that I source and place for you, so the page looks polished and on brand from day one without waiting on a photo shoot.</p>
+          </div>
+          <div class="card">
+            <div class="card-num">Section 04</div>
+            <h4>Footer</h4>
+            <p style="line-height:1.6em;"><span class="strong muted">An automated booking form for prospects</span> to request a free estimate and pick a time,</span> your contact details, your service area, and links to your social profiles if you have them.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ===== Included with the build ===== -->
+    <section>
+      <div class="container">
+        <h2>Included with the <em>build</em></h2>
+        <ul class="feature-list">
+          <li><strong>Imagery sourced and placed for you,</strong> so the page looks polished and on brand without waiting on a photo shoot.</li>
+          <li><strong>A booking form in the footer with calendar integration,</strong> so prospects can request a free estimate and choose a time that works for both of you.</li>
+          <li><strong>Email automation</strong> that confirms each request and keeps you from chasing every lead by hand.</li>
+          <li><strong>Social links</strong> in the footer for any profiles you have.</li>
+          <li><strong>Iconography pulled from your brochure</strong> so the page and your print materials feel like one brand.</li>
+        </ul>
+        <lead style="margin-top:40px; margin-bottom:12px;">The page is built on Framer. I handle the build, maintenance, image updates, and any bugs, so you can stay focused on running the business.</lead>
+        <p style="margin-top:8px; font-size:14px; font-style:italic;">Copywriting for the full landing page, written in your voice, is available as an add-on at $0.50 per word.</p>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ===== Project process ===== -->
+    <section>
+      <div class="container">
+        <h2>Project <em>process</em></h2>
+        <p style="margin-bottom:32px;">Here is how we will work together from start to finish.</p>
+        <ol class="process">
+          <li>
+            <h4>Wireframe and layout</h4>
+            <p>I start by mapping out the landing page. Think of this as the <strong>blueprint</strong>. Just as a home builder needs blueprints to build a house the right way, <strong>I plan where each section goes</strong>, the services, your mission and about, imagery, and the footer, before any design begins.</p>
+          </li>
+          <li>
+            <h4>Design and review</h4>
+            <p>Next I design the landing page. Before I move into development, we set up a video call to <strong>review it together</strong> so we are aligned on the direction before the build begins.</p>
+          </li>
+          <li>
+            <h4>Development and domain</h4>
+            <p>I develop the page and <strong>connect your domain</strong> to the new site by <strong>July 8</strong>. That gives us a couple of days to test everything before your <strong>July 13 deadline</strong>.</p>
+          </li>
+          <li>
+            <h4>Testing and launch</h4>
+            <p>I test the <strong>booking form</strong>, the <strong>email automation</strong>, and the page on phones and desktops to make sure everything runs <strong>smoothly</strong>. Then we launch, live for your brochure QR code by <strong>July 13, 2026</strong>. This can shift depending on when we are able to schedule our review call and how quickly we exchange feedback.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ===== Investment ===== -->
+    <section>
+      <div class="container">
+        <h2><em>Investment</em></h2>
+
+        <div class="invest">
+          <div class="invest-row head">
+            <span class="label">Landing page package</span>
+            <span class="value">$1,000</span>
+          </div>
+          <div class="invest-row">
+            <span class="label">Custom landing page on Framer</span>
+            <span class="value included">Included</span>
+          </div>
+          <div class="invest-row">
+            <span class="label">Imagery sourced and placed</span>
+            <span class="value included">Included</span>
+          </div>
+          <div class="invest-row">
+            <span class="label">Footer booking form, calendar integration, and email automation</span>
+            <span class="value included">Included</span>
+          </div>
+          <div class="invest-row">
+            <span class="label">One month of maintenance after launch</span>
+            <span class="value included">Included</span>
+          </div>
+        </div>
+
+        <div class="note-block">
+          <span class="note-title">After the first month</span>
+          <p class="p" style="max-width: 100%;"><span class="sm">Ongoing updates are billed at $80 per hour, rounded to the nearest 30 minutes. Most small updates, like adding a photo or a new testimonial, take about 30 to 60 minutes depending on the volume. I handle these for you so the site stays current without you having to learn the platform.</span></p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ===== What I will need from you ===== -->
+    <section>
+      <div class="container">
+        <h2>What I will <em>need from you</em></h2>
+        <p style="margin-bottom:28px;">A few things to get started and keep us on the 4 week timeline:</p>
+        <ul class="feature-list">
+          <li>Your logo as a high resolution vector PDF.</li>
+          <li>The brochure design file, so I can pull iconography.</li>
+          <li>Your additional brand colors, with hex codes if you have them.</li>
+          <li>Access to your Namecheap credentials to manage your domain.</li>
+          <li>The email address where booking requests should land.</li>
+          <li>Links to any social profiles you want in the footer.</li>
+        </ul>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ===== Next steps + closing ===== -->
+    <section>
+      <div class="container">
+        <h2 style="margin-bottom:40px;">Next <em>steps</em></h2>
+        <ol class="process next-steps p">
+          <li>
+            <h5>Review this proposal</h5>
+            <p>Review this proposal. If you have questions, feel free to email me or schedule a call.</p>
+          </li>
+          <li>
+            <h5>Agreement and first invoice</h5>
+            <p>When you are ready to move forward, fill out the quick form below to let me know you have accepted the proposal. From there I will send over an agreement and an invoice for the first payment.</p>
+          </li>
+          <li>
+            <h5>We start your landing page build</h5>
+            <p>Once your agreement is signed, the first invoice is paid, and I have the items listed above, I will begin work on your landing page so it is ready by July 13, 2026.</p>
+          </li>
+        </ol>
+
+        <p class="p" style="margin-top: 40px; margin-bottom: 0px; text-wrap: pretty; font-size: 1.2rem; color: var(--c-b8);">I would love to build this with you. Dynamic Cleaning Services has the experience and the credentials. Your website should show that the moment someone lands on it.</p>
+
+        <div class="signoff">
+          <h5 style="margin: 16px 0 6px;"><em>Lindsay Dev Creative</em></h5>
+          <div class="sig-role">Owner and Creative Director, Lindsay Dev Creative</div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ===== Accept / signature form ===== -->
+    <section id="accept">
+      <div class="container">
+        <h2>Accept <em>Proposal</em></h2>
+
+        <div class="accept-shell" style="margin-top:38px;">
+          <!--
+            Form posts to FormSubmit using a hashed alias, so the email address is not exposed in the page source.
+            Submissions are delivered to the address tied to this alias in the FormSubmit account.
+          -->
+          <form action="https://formsubmit.co/9694f9b9acaa529f4a69c2bdf67752c9" method="POST">
+            <input type="hidden" name="_subject" value="Proposal accepted, Dynamic Cleaning Services landing page" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="Proposal" value="Landing Page Proposal, Dynamic Cleaning Services" />
+
+            <div class="form-grid">
+              <div class="field full">
+                <label for="company">Company name</label>
+                <input id="company" name="Company name" type="text" placeholder="Dynamic Cleaning Services" required />
+              </div>
+              <div class="field">
+                <label for="first">First name</label>
+                <input id="first" name="First name" type="text" placeholder="Henry" required />
+              </div>
+              <div class="field">
+                <label for="last">Last name</label>
+                <input id="last" name="Last name" type="text" placeholder="Last name" required />
+              </div>
+              <div class="field full">
+                <label for="email">Email</label>
+                <input id="email" name="Email" type="email" placeholder="you@example.com" required />
+              </div>
+            </div>
+
+            <div class="consent">
+              <p class="p" style="margin:0; text-wrap: pretty;"><span class="sm"><strong>By submitting this form, you provide your digital signature and accept the terms of this proposal.</strong></span></p>
+            </div>
+
+            <button class="submit-btn" type="submit">Sign &amp; Accept Proposal</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="f-brand">Lindsay Dev Creative</span>
+      <span class="f-meta">Landing Page Proposal &middot; June 13, 2026</span>
+    </div>
+  </footer>
+
+</body>
+</html>
