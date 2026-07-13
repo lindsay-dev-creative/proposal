@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Graphic Design Services Proposal &middot; Carolina Auto Auction</title>
+<meta name="description" content="Graphic Design Services Proposal for Carolina Auto Auction, prepared by Lindsay Young, Lindsay Dev Creative." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+/* Embedded from caa.css */
+:root {
+    --bg: #0a0a0a;
+    --gold: #F1C26F;
+    --c-ed: #ededed;
+    --c-d2: #d2d2d2;
+    --c-b8: #b8b8b8;
+    --c-99: #999999;
+    --c-7a: #7a7a7a;
+    --c-4d: #4d4d4d;
+    --c-2e: #2e2e2e;
+    --c-26: #262626;
+    --c-1a: #1a1a1a;
+
+    --serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+    --maxw: 920px;
+    --pad: 48px;
+
+    --bold600: 600;
+  }
+
+  .bold { font-weight: var(--bold600); }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--c-b8);
+    font-family: var(--sans);
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection { background: var(--gold); color: #0a0a0a; }
+
+  /* ---------- Typography ---------- */
+  h1, h2, h3, h4, h5, h6, .h5 {
+    font-family: var(--serif);
+    font-weight: 400;
+    color: var(--c-ed);
+    letter-spacing: 0.005em;
+  }
+  h1 em, h2 em, h3 em, h4 em, h5 em, h6 em,
+  .h5 em, .h5.it {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  h1 {
+    font-size: 3.815rem; /* 61px */
+    line-height: 1.2em;
+    margin: 0 0 28px;
+  }
+  h2 {
+    font-size: 3.052rem; /* 50 px */
+    line-height: 1.25em;
+    margin: 0 0 22px;
+  }
+  h3 {
+    font-size: 2.441rem; /* 39px */
+    line-height: 1.3em;
+    margin: 0 0 12px;
+  }
+  h4 {
+    font-size: 1.953rem; /* 31px */
+    line-height: 1.35em;
+    margin: 0 0 8px;
+    color: var(--c-ed);
+  }
+  h5 {
+    font-size: 1.563rem; /* 25px */
+    line-height: 1.4em;
+    letter-spacing: 0.01em;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  h6 {
+    font-size: 1.25rem; /* 20px */
+    line-height: 1.45em;
+  }
+
+  p {
+    font-size: 17px;
+    margin: 0 0 20px;
+    max-width: 624px;
+    color: var(--c-7a);
+    text-wrap: pretty; }
+  .p .sm {
+    font-family: var(--sans);
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    color: var(--c-7a);
+  }
+
+  lead {
+    font-size: 19px;
+    line-height: 1.6;
+    text-wrap: pretty;
+    color: var(--c-b8);
+    max-width: 56ch;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .lead.strong { color: var(--c-ed); font-weight: 500; }
+
+  strong { color: var(--c-ed); font-weight: 500; }
+  .strong.muted { color: var(--c-d2); font-weight: 500; }
+  a { color: var(--gold); }
+
+  /* ---------- Layout ---------- */
+  .container {
+    width: 100%;
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding-inline: var(--pad);
+  }
+
+  /* ---------- Sticky header ---------- */
+  header.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10, 10, 10, 0.82);
+    backdrop-filter: saturate(140%) blur(14px);
+    -webkit-backdrop-filter: saturate(140%) blur(14px);
+    border-bottom: 1px solid var(--c-1a);
+  }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    min-height: 72px;
+    padding-block: 12px;
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    color: var(--c-ed);
+  }
+  .brand svg, .brand img { display: block; height: 56px; width: 56px; object-fit: contain; }
+  .brand .brand-word {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--c-7a);
+    line-height: 1.3;
+  }
+  .brand .brand-word b { color: var(--c-ed); font-weight: 600; display: block; }
+
+  .nav-cta-wrap {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .nav-note {
+    font-family: var(--sans);
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    color: var(--c-7a);
+    font-style: italic;
+    white-space: nowrap;
+  }
+  /* Style 1 — quiet inline text link ("Email me →") */
+  .nav-note a {
+    color: var(--c-7a);
+    text-decoration: none;
+    font-style: normal;
+    transition: color 0.2s ease;
+  }
+  .nav-note a .arrow {
+    display: inline-block;
+    margin-left: 4px;
+    transition: transform 0.2s ease;
+  }
+  .nav-note a:hover { color: var(--c-b8); }
+  .nav-note a:hover .arrow { transform: translateX(5px); }
+  .nav-note a:active { color: var(--gold); }
+  .nav-note a:active .arrow { transform: translateX(5px); }
+
+  /* button */
+  .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--c-ed);
+    background: var(--bg);
+    padding: 10px 20px;
+    border: 1px solid var(--c-2e);
+    transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.1s ease;
+    white-space: nowrap;
+  }
+  .nav-cta:hover { border-color: var(--c-ed); color: var(--c-ed); }
+  .nav-cta:active {
+    transform: translateY(1px);
+    border: 1px solid var(--gold);
+    color: var(--gold);
+  }
+
+  /* ---------- Sections ---------- */
+  section { padding-block: clamp(56px, 8vw, 96px); }
+  .section-divider { border: 0; border-top: 1px solid var(--c-1a); margin: 0; }
+
+  .eyebrow {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--c-7a);
+    margin: 0 0 22px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: var(--c-4d);
+    display: inline-block;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero { padding-top: clamp(64px, 11vw, 130px); padding-bottom: clamp(48px, 7vw, 80px); }
+  .hero .kicker {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 28px;
+  }
+  .meta-grid {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 10px 40px;
+    margin-top: 44px;
+    padding-top: 32px;
+    border-top: 1px solid var(--c-1a);
+    max-width: 640px;
+  }
+  .meta-grid dt {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--c-7a);
+    padding-top: 4px;
+  }
+  .meta-grid dd {
+    margin: 0;
+    color: var(--c-ed);
+    font-size: 16px;
+  }
+  .meta-grid dd span { display: block; color: var(--c-7a); font-size: 14px; }
+
+  /* ---------- Lists ---------- */
+  ul.feature-list { list-style: none; margin: 0; padding: 0; }
+  ul.feature-list li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 18px;
+    color: var(--c-b8);
+    max-width: 60ch;
+    text-wrap: pretty;
+  }
+  ul.feature-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 7px;
+    height: 7px;
+    border: 1px solid var(--gold);
+    transform: rotate(45deg);
+  }
+  ul.feature-list li strong { color: var(--c-ed); }
+
+  /* ---------- Cards ---------- */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--c-1a);
+    border: 1px solid var(--c-1a);
+    margin-top: 40px;
+  }
+  .card {
+    background: var(--bg);
+    padding: 34px 32px;
+  }
+  .card .card-num {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--c-7a);
+    margin-bottom: 16px;
+  }
+  .card h4 { font-style: italic; color: #e8c88a; }
+  .card h5 { margin-bottom: 12px; }
+  .card p { margin-bottom: 0; color: var(--c-b8); font-size: 16px; }
+
+  /* ---------- Portfolio gallery ---------- */
+  .work-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 40px;
+  }
+  .work-tile {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    border: 1px solid var(--c-1a);
+    background: var(--c-1a);
+    border-radius: 3px;
+    overflow: hidden;
+    transition: border-color 0.25s ease, transform 0.25s ease;
+  }
+  .work-tile:hover { border-color: var(--c-2e); transform: translateY(-3px); }
+  .work-img { aspect-ratio: 4 / 3; overflow: hidden; background: #121212; }
+  .work-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top left;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+  .work-tile:hover .work-img img { transform: scale(1.05); }
+  .work-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 20px 22px;
+    background: var(--bg);
+  }
+  .work-body h5 { margin: 0; font-size: 1.375rem; }
+  .work-link {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0em;
+    text-transform: none;
+    color: var(--c-7a);
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s ease;
+  }
+  .work-link .arrow { transition: transform 0.2s ease; }
+  .work-tile:hover .work-link { color: var(--gold); }
+  .work-tile:hover .work-link .arrow { transform: translateX(3px); }
+
+  /* ---------- Testimonials ---------- */
+  .quote {
+    border-left: 2px solid var(--c-2e);
+    padding: 4px 0 4px 30px;
+    margin: 0 0 44px;
+    max-width: 74ch;
+  }
+  .quote:last-child { margin-bottom: 0; }
+  .quote p {
+    font-family: var(--sans-serif);
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--c-d2);
+    margin-bottom: 18px;
+    max-width: none;
+  }
+  .quote cite {
+    font-family: var(--sans);
+    font-style: normal;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--c-7a);
+  }
+
+  /* ---------- Phase / timeline ---------- */
+  .phase {
+    border: 1px solid var(--c-26);
+    border-radius: 3px;
+    padding: 34px 36px;
+    margin-bottom: 20px;
+    background: linear-gradient(180deg, #121212 0%, var(--c-1a) 100%);
+  }
+  .phase-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+    margin-bottom: 14px;
+  }
+  .phase-tag {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .phase-date {
+    font-family: var(--sans);
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    color: var(--c-7a);
+  }
+  .phase h3 { margin-bottom: 12px; }
+  .phase p { margin-bottom: 0; color: var(--c-b8); font-size: 16px; }
+
+  /* ---------- Process steps ---------- */
+  ol.process { list-style: none; counter-reset: step; margin: 8px 0 0; padding: 0; }
+  ol.process li {
+    position: relative;
+    counter-increment: step;
+    padding: 0 0 34px 48px;
+    border-left: 1px solid var(--c-26);
+    margin-left: 22px;
+  }
+  ol.process li:last-child { border-left-color: transparent; padding-bottom: 0; }
+  ol.process li::before {
+    content: counter(step);
+    position: absolute;
+    left: -22px;
+    top: -4px;
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    background: var(--c-1a);
+    border: 1px solid var(--c-2e);
+    border-radius: 50%;
+    font-family: var(--serif);
+    font-style: normal;
+    font-size: 1.25rem;
+    color: var(--c-ed);
+  }
+  ol.process li h4 { margin-bottom: 6px; }
+  ol.process li h5 { margin: 0 0 6px; }
+  ol.process li p { margin-bottom: 0; font-size: 17px; }
+  ol.process:not(.next-steps) li p { color: var(--c-99); }
+  ol.process:not(.next-steps) li strong { color: var(--c-d2); }
+  /* Next steps list — same as .process, tighter bottom spacing */
+  ol.process.next-steps li { padding-bottom: 24px; }
+  ol.process.next-steps li:last-child { padding-bottom: 0; }
+  ol.process.next-steps li strong { color: var(--c-ed); }
+  .p { max-width: 624px; }
+
+  /* ---------- Investment / pricing table ---------- */
+  .invest {
+    border: 1px solid var(--c-26);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: 40px;
+  }
+  .invest-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 20px 30px;
+    border-bottom: 1px solid var(--c-1a);
+  }
+  .invest-row:last-child { border-bottom: 0; }
+  .invest-row .label { color: var(--c-b8); font-size: 16px; }
+  .invest-row .value {
+    font-family: var(--sans);
+    font-size: 15px;
+    letter-spacing: 0em;
+    text-transform: none;
+    color: var(--c-b8);
+    white-space: nowrap;
+  }
+  .invest-row.head {
+    background: #121212;
+    padding-block: 24px;
+  }
+  .invest-row.head .label {
+    font-family: var(--serif);
+    font-size: 26px;
+    color: var(--c-ed);
+  }
+
+  .price-label {
+    font-family: var(--erif);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 40px 0 14px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .price-label:first-of-type { margin-top: 8px; }
+
+  .note-block {
+    margin-top: 0px;
+    border-radius: 0 3px 3px 0;
+  }
+  .note-block p { margin-bottom: 0; font-size: 17px; font-style: italic; color: var(--c-7a); }
+  .note-block .note-title {
+    font-family: var(--sans);
+    font-weight: 400;
+    font-size: 15px;
+    letter-spacing: 0em;
+    text-transform: italic;
+    color: var(--c-7a);
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  /* ---------- Signature / closing ---------- */
+  .signoff .sig-role {
+    font-family: var(--sans);
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    color: var(--c-7a);
+  }
+
+  /* ---------- Footer ---------- */
+  footer.site-footer {
+    border-top: 1px solid var(--c-1a);
+    padding-block: 44px;
+  }
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+  .footer-inner .f-brand {
+    font-family: var(--serif);
+    font-style: normal;
+    font-size: 20px;
+    letter-spacing: 0.02em;
+    color: var(--c-7a);
+  }
+  .footer-inner .f-meta {
+    font-family: var(--sans);
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    color: var(--c-7a);
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 900px) {
+    :root { --pad: 32px; }           /* tablet margins */
+    body { font-size: 16px; }
+    .card-grid { grid-template-columns: 1fr; }
+    .work-grid { grid-template-columns: repeat(2, 1fr); }
+    .brand .brand-word { display: none; }
+  }
+  @media (max-width: 600px) {
+    :root { --pad: 24px; }           /* mobile margins */
+    .header-inner { min-height: 64px; }
+    .brand svg, .brand img { height: 40px; width: 40px; }
+    .nav-cta { padding: 10px 16px; font-size: 11px; letter-spacing: 0.14em; }
+    .nav-note { display: none; }
+    .meta-grid { grid-template-columns: 1fr; gap: 4px; }
+    .meta-grid dt { padding-top: 16px; }
+    .meta-grid dt:first-child { padding-top: 0; }
+    .work-grid { grid-template-columns: 1fr; }
+    .invest-row { flex-direction: column; gap: 6px; padding-inline: 22px; }
+    ol.process li { padding-left: 60px; }
+  }
+
+</style>
+</head>
+<body>
+
+  <!-- ===== Sticky header ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Lindsay Dev Creative, back to top">
+        <img src="LDC_PRIM_WHT.png" alt="Lindsay Dev Creative"/>
+      </a>
+      <div class="nav-cta-wrap">
+        <a class="nav-cta" href="https://www.lindsaydevcreative.com/casestudies-caa">Work Samples</a>
+        <span class="nav-note"><a href="mailto:lindsay@lindsaydevcreative.com">Email me</a></span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== Hero ===== -->
+    <section class="hero" id="top">
+      <div class="container">
+        <h5>Proposal for</h5>
+        <h1><em>Graphic Design Services</em></h1>
+
+        <dl class="meta-grid">
+          <dt>Proposal for</dt>
+          <dd>Carolina Auto Auction</dd>
+          <dt>Prepared by</dt>
+          <dd>Lindsay Dev Creative</dd>
+          <dt>Date</dt>
+          <dd>July 13, 2026</dd>
+        </dl>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ===== Where CAA is now ===== -->
+    <section>
+      <div class="container">
+        <h2>Where CAA is <em>now</em></h2>
+        <ul class="feature-list">
+          <li>South Carolina&rsquo;s <strong>largest auto auction</strong>, running on weekly sales, recurring events, and steady promos</li>
+          <li>Marketing speaks to dealers, not the public, so design has to be <strong>fast, consistent, and professional</strong></li>
+          <li><strong>Katie</strong> leads brand, campaigns, and approvals. <strong>Zach</strong> sets direction. <strong>Isaiah</strong> runs video and social visuals</li>
+          <li>Cassie retires at the end of July, and the priority is <strong>coverage without a gap</strong></li>
+          <li>Starting while she&rsquo;s still here lets me <strong>learn your systems</strong> and take over her files <strong>cleanly</strong></li>
+        </ul>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ===== Where CAA is headed ===== -->
+    <section>
+      <div class="container">
+        <h2>Where CAA is <em>headed</em></h2>
+        <ul class="feature-list">
+          <li>The current materials <strong>no longer match the quality</strong> of the operation</li>
+          <li>A <strong>modern, bolder look,</strong> with updated brand guidelines to support it</li>
+          <li>Elevated booklets and marketing materials <strong>give your sales team a stronger tool</strong> for winning new dealers</li>
+        </ul>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ===== Why we're a good fit ===== -->
+    <section>
+      <div class="container">
+        <h2>Why we&rsquo;re a <em>good fit</em></h2>
+        <p style="color:var(--c-99); margin-bottom:28px; max-width:64ch;">So much of your marketing runs on a rhythm: weekly sales, quarterly promotions and events, and the occasional trade show. That kind of recurring, deadline-driven work is exactly what I enjoy and am set up to handle well. What you can expect:</p>
+        <ul class="feature-list">
+          <li><strong>A smooth handoff.</strong> I'll review Cassie's templates and files and coordinate with her directly so nothing gets lost in the transition.</li>
+          <li><strong>A modern, bold direction.</strong> That fresher, bolder look is where CAA is headed, and it's what I'd carry across your promos, apparel, and event materials.</li>
+          <li><strong>Adobe-based, print-ready delivery.</strong> Working with Adobe and print vendors for 10+ years, I prepare clean, print-ready files, with the option to coordinate directly with your vendor.</li>
+        </ul>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ===== My work ===== -->
+    <section id="work">
+      <div class="container">
+        <h2>My <em>work</em></h2>
+        <div class="work-grid">
+          <a class="work-tile" href="https://www.lindsaydevcreative.com/casestudies-caa/promo-ad" target="_blank" rel="noopener">
+            <div class="work-img"><img src="assets/work-promo-ad.png" alt="Promo Ad" loading="lazy" /></div>
+            <div class="work-body">
+              <h5>Promo Ad</h5>
+              <span class="work-link">See work <span class="arrow">&rarr;</span></span>
+            </div>
+          </a>
+
+          <a class="work-tile" href="https://www.lindsaydevcreative.com/casestudies-caa/collateral" target="_blank" rel="noopener">
+            <div class="work-img"><img src="assets/work-collateral.png" alt="Collateral" loading="lazy" /></div>
+            <div class="work-body">
+              <h5>Collateral</h5>
+              <span class="work-link">See work <span class="arrow">&rarr;</span></span>
+            </div>
+          </a>
+
+          <a class="work-tile" href="https://www.lindsaydevcreative.com/casestudies-caa/booklets" target="_blank" rel="noopener">
+            <div class="work-img"><img src="assets/work-booklets.jpg" alt="Booklets" loading="lazy" /></div>
+            <div class="work-body">
+              <h5>Booklets</h5>
+              <span class="work-link">See work <span class="arrow">&rarr;</span></span>
+            </div>
+          </a>
+
+          <a class="work-tile" href="https://www.lindsaydevcreative.com/casestudies-caa/brand-guidelines" target="_blank" rel="noopener">
+            <div class="work-img"><img src="assets/work-brand-guidelines.jpg" alt="Brand Guidelines" loading="lazy" /></div>
+            <div class="work-body">
+              <h5>Brand Guidelines</h5>
+              <span class="work-link">See work <span class="arrow">&rarr;</span></span>
+            </div>
+          </a>
+
+          <a class="work-tile" href="https://www.lindsaydevcreative.com/casestudies-caa/signage" target="_blank" rel="noopener">
+            <div class="work-img"><img src="assets/work-signage.jpg" alt="Signage" loading="lazy" /></div>
+            <div class="work-body">
+              <h5>Signage</h5>
+              <span class="work-link">See work <span class="arrow">&rarr;</span></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ===== Monthly pricing ===== -->
+    <section>
+      <div class="container">
+        <h2 style="margin-bottom: 12px;">Monthly <em>pricing</em></h2>
+
+        <div class="note-block" style="margin-top:0; margin-bottom:8px;">
+          <p style="margin: 0; font-style: normal;">Our first meet and greet is complimentary and won't be billed against your monthly retainer.</p>
+        </div>
+
+        <div class="invest">
+          <div class="invest-row head">
+            <h5 style="margin: 0;">Option 1: Monthly Retainer</h5>
+            <h5 style="margin: 0;"><em>$2,250 / month</em></h5>
+          </div>
+          <div class="invest-row">
+            <span class="label">30 hours / month</span>
+            <span class="value">$75 / hour</span>
+          </div>
+          <div class="invest-row">
+            <span class="label">All project administration</span>
+            <span class="value included">Included</span>
+          </div>
+          <div class="invest-row">
+            <span class="label">Additional hours</span>
+            <span class="value">$75 / hour</span>
+          </div>
+          <div class="invest-row">
+            <span class="label">Bi-monthly payments, billed the 1st and 15th</span>
+            <span class="value">$1,125 x 2</span>
+          </div>
+        </div>
+
+        <div class="invest">
+          <div class="invest-row head">
+            <h5 style="margin: 0;">Option 2: Standard rate</h5>
+            <h5 style="margin: 0;"><em>$80 / hour</em></h5>
+          </div>
+          <div class="invest-row">
+            <span class="label">Bi-monthly invoicing, billed the 1st and 15th</span>
+            <span class="value">-</span>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ===== Project-based pricing ===== -->
+    <section>
+      <div class="container">
+        <h2>Project-based <em>pricing</em></h2>
+
+        <div class="invest">
+          <div class="invest-row head">
+            <h5 style="margin: 0;">Booklets</h5>
+            <h5 style="margin: 0;"><em>$250 / page</em></h5>
+          </div>
+          <div class="invest-row">
+            <span class="label">Two rounds of revisions per page</span>
+            <span class="value">Included</span>
+          </div>
+          <div class="invest-row">
+            <span class="label">All project administration</span>
+            <span class="value">Included</span>
+          </div>          
+          <div class="invest-row">
+            <span class="label">Estimated Total Pricing</span>
+            <span class="value">$5,250 (20 pages)</span>
+          </div>
+        </div>
+
+         <div class="invest">
+          <div class="invest-row head">
+            <h5 style="margin: 0;">Brand Guidelines</h5>
+            <h5 style="margin: 0;"><em>Flat fee: $800</em></h5>
+          </div>
+           <div class="invest-row">
+            <span class="label">Number of total pages</span>
+            <span class="value">8</span>
+          </div>
+          <div class="invest-row">
+            <span class="label">Two rounds of revisions</span>
+            <span class="value">Included</span>
+          </div>
+          <div class="invest-row">
+            <span class="label">All project administration</span>
+            <span class="value">Included</span>
+          </div>  
+  
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ===== Testimonials ===== -->
+    <section>
+      <div class="container">
+        <h2 style="margin-bottom: 40px;">What clients <em>say</em></h2>
+        <blockquote class="quote">
+          <h5 style="margin: 0px 0px 8px;"><em>Working with Lindsay has been an exceptional experience from start to finish</em></h5>
+          <p style="margin-bottom: 8px; color: var(--c-b8);">Lindsay took the time to understand our brand and vision, then translated it into designs that were both beautiful and strategically aligned with our goals. She's responsive, collaborative, and delivers high-quality work on time.</p>
+          <cite>Kristin Scott, Art Director at Planned Administrators, Inc.</cite>
+        </blockquote>
+        <blockquote class="quote">
+          <h5 style="margin: 0px 0px 8px;"><em>Lindsay is a pure pleasure to work with</em></h5>
+          <p style="margin-bottom: 8px; color: var(--c-b8);">Fast, efficient, and fair. It was a great company decision to let Lindsay handle our new retail packaging, everything came out better than expected. Thanks for a job well done Lindsay, we’ll be back.</p>
+          <cite>Douglas Wright, Owner of The Ratchet Depot, Inc.</cite>
+        </blockquote>
+        <blockquote class="quote">
+          <h5 style="margin: 0px 0px 8px;"><em>Lindsay doesn't just create beautiful designs</em></h5>
+          <p style="margin-bottom: 8px; color: var(--c-b8);">She listened carefully, asked the right questions, and turned the ideas in my head into something better than I imagined. Working with her was one of the best investments I've made for my business.</p>
+          <cite>Robin Collins, Owner of RSVP</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ===== Next steps + closing ===== -->
+    <section>
+      <div class="container">
+        <h2 style="margin-bottom:20px;">Next <em>steps</em></h2>
+        <p class="nav-note" style="font-size: 1rem; text-decoration: underline; margin: 0px 0px 40px;"><a href="mailto:lindsay@lindsaydevcreative.com">Email me</a></p>
+        <ol class="process next-steps p">
+          <li>
+            <h5>Reach out with any questions</h5>
+          </li>
+          <li>
+            <h5>Email me to let me know you'd like to move forward</h5>
+          </li>
+          <li>
+            <h5>Once you're ready, we'll put together a contract and settle on an invoicing schedule</h5>
+          </li>
+        </ol>
+
+        <div class="signoff">
+          <h5 style="margin: 40px 0 6px; color: var(--gold);"><em>- Lindsay Dev Creative</em></h5>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="f-brand">Lindsay Dev Creative</span>
+      <span class="f-meta">Proposal for Graphic Design Services &middot; July 13, 2026</span>
+    </div>
+  </footer>
+
+</body>
+</html>
