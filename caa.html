@@ -148,11 +148,11 @@
   .header-inner {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 20px;
+    gap: 32px;
     min-height: 72px;
     padding-block: 12px;
   }
+  .header-inner .nav-cta-wrap { margin-left: auto; }
   .brand {
     display: inline-flex;
     align-items: center;
@@ -232,8 +232,8 @@
 
   /* ---------- Sub nav ---------- */
   nav.subnav {
-    border-top: 1px solid var(--c-1a);
-    background: rgba(10, 10, 10, 0.6);
+    display: flex;
+    align-items: center;
   }
   .subnav-inner {
     display: flex;
@@ -626,12 +626,20 @@
   }
   @media (max-width: 600px) {
     :root { --pad: 24px; }           /* mobile margins */
-    .header-inner { min-height: 64px; }
+    .header-inner { min-height: 64px; flex-wrap: wrap; row-gap: 12px; padding-bottom: 0; }
     .brand svg, .brand img { height: 40px; width: 40px; }
     .nav-cta { padding: 10px 16px; font-size: 11px; letter-spacing: 0.14em; }
-    .nav-cta-wrap { gap: 12px; }
+    .nav-cta-wrap { gap: 12px; order: 2; }
     .nav-cta-work { display: none; }
-    .nav-cta-email { display: inline-flex; font-size: 14px; }
+    .nav-cta-email { display: inline-flex; font-size: 12px; }
+    nav.subnav {
+      order: 3;
+      flex-basis: 100%;
+      border-top: 1px solid var(--c-1a);
+      background: rgba(10, 10, 10, 0.6);
+      margin-inline: calc(-1 * var(--pad));
+      padding-inline: var(--pad);
+    }
     .site-header .nav-note { display: none; }
     .meta-grid { grid-template-columns: 1fr; gap: 4px; }
     .meta-grid dt { padding-top: 16px; }
@@ -653,21 +661,21 @@
       <a class="brand" href="#top" aria-label="Lindsay Dev Creative, back to top">
         <img src="LDC_PRIM_WHT.png" alt="Lindsay Dev Creative"/>
       </a>
+      <nav class="subnav" aria-label="Section navigation">
+        <div class="subnav-inner">
+          <a href="#top">Intro</a>
+          <a href="#work">Work</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#next-steps">Next Steps</a>
+        </div>
+      </nav>
       <div class="nav-cta-wrap">
         <a class="nav-cta nav-cta-work" href="https://www.lindsaydevcreative.com/casestudies-caa">Work Samples</a>
         <a class="nav-cta nav-cta-email" href="mailto:lindsay@lindsaydev.com">Email me</a>
         <span class="nav-note"><a href="mailto:lindsay@lindsaydevcreative.com">Email me</a></span>
       </div>
     </div>
-    <nav class="subnav" aria-label="Section navigation">
-      <div class="container subnav-inner">
-        <a href="#top">Intro</a>
-        <a href="#work">Work</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#next-steps">Next Steps</a>
-      </div>
-    </nav>
   </header>
 
   <main>
