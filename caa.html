@@ -227,6 +227,8 @@
     border: 1px solid var(--gold);
     color: var(--gold);
   }
+  /* Mobile-only "Email me" button, hidden on desktop */
+  .nav-cta-email { display: none; }
 
   /* ---------- Sub nav ---------- */
   nav.subnav {
@@ -244,7 +246,7 @@
   .subnav-inner::-webkit-scrollbar { display: none; }
   .subnav-inner a {
     font-family: var(--sans);
-    font-weight: 500;
+    font-weight: 400;
     font-size: 14px;
     letter-spacing: 0em;
     text-transform: none;
@@ -627,6 +629,8 @@
     .header-inner { min-height: 64px; }
     .brand svg, .brand img { height: 40px; width: 40px; }
     .nav-cta { padding: 10px 16px; font-size: 11px; letter-spacing: 0.14em; }
+    .nav-cta-wrap { gap: 12px; }
+    .nav-cta-email { display: inline-flex; font-size: 14px; }
     .site-header .nav-note { display: none; }
     .meta-grid { grid-template-columns: 1fr; gap: 4px; }
     .meta-grid dt { padding-top: 16px; }
@@ -650,6 +654,7 @@
       </a>
       <div class="nav-cta-wrap">
         <a class="nav-cta" href="https://www.lindsaydevcreative.com/casestudies-caa">Work Samples</a>
+        <a class="nav-cta nav-cta-email" href="mailto:lindsay@lindsaydevcreative.com">Email me</a>
         <span class="nav-note"><a href="mailto:lindsay@lindsaydevcreative.com">Email me</a></span>
       </div>
     </div>
