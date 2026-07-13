@@ -228,8 +228,36 @@
     color: var(--gold);
   }
 
+  /* ---------- Sub nav ---------- */
+  nav.subnav {
+    border-top: 1px solid var(--c-1a);
+    background: rgba(10, 10, 10, 0.6);
+  }
+  .subnav-inner {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    min-height: 46px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .subnav-inner::-webkit-scrollbar { display: none; }
+  .subnav-inner a {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--c-7a);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+  }
+  .subnav-inner a:hover { color: var(--c-ed); }
+  .subnav-inner a:active { color: var(--gold); }
+
   /* ---------- Sections ---------- */
-  section { padding-block: clamp(56px, 8vw, 96px); }
+  section { padding-block: clamp(56px, 8vw, 96px); scroll-margin-top: 128px; }
   .section-divider { border: 0; border-top: 1px solid var(--c-1a); margin: 0; }
 
   .eyebrow {
@@ -623,6 +651,15 @@
         <span class="nav-note"><a href="mailto:lindsay@lindsaydevcreative.com">Email me</a></span>
       </div>
     </div>
+    <nav class="subnav" aria-label="Section navigation">
+      <div class="container subnav-inner">
+        <a href="#top">Intro</a>
+        <a href="#work">Work</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#next-steps">Next Steps</a>
+      </div>
+    </nav>
   </header>
 
   <main>
@@ -742,7 +779,7 @@
     <hr class="section-divider" />
 
     <!-- ===== Monthly pricing ===== -->
-    <section>
+    <section id="pricing">
       <div class="container">
         <h2 style="margin-bottom: 12px;">Monthly <em>pricing</em></h2>
 
@@ -837,7 +874,7 @@
     <hr class="section-divider" />
 
     <!-- ===== Testimonials ===== -->
-    <section>
+    <section id="reviews">
       <div class="container">
         <h2 style="margin-bottom: 40px;">What clients <em>say</em></h2>
         <blockquote class="quote">
@@ -861,7 +898,7 @@
     <hr class="section-divider" />
 
     <!-- ===== Next steps + closing ===== -->
-    <section>
+    <section id="next-steps">
       <div class="container">
         <h2 style="margin-bottom:20px;">Next <em>steps</em></h2>
         <p class="nav-note" style="font-size: 1rem; text-decoration: underline; margin: 0px 0px 40px;"><a href="mailto:lindsay@lindsaydevcreative.com">Email me</a></p>
